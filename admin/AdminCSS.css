@@ -1,0 +1,29 @@
+/* CSS form for Admin of TechLab Admin Dashboard */
+
+
+#grid{
+    display: grid;
+    grid-template-columns: .5fr .5fr;
+    grid-gap: 1em;
+    /* grid-template-rows: minmax(auto, 60%); */
+
+}
+
+.name{
+    border: black 1px solid;
+}
+
+textarea{
+    height: 1em;
+    font-size: 1.1em;
+}
+
+#dateDiv{
+    margin-top: 5%;
+}
+
+#todayPageHeading{
+    display: grid;
+    grid-template-columns: .3fr 1fr;
+    grid-gap: 1em;
+}

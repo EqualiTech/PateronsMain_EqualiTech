@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin Dashboard</title>
+    <script src="helperFunctionsAdmin.js"></script>
+    <script src="objects.js"></script>
+    <script src="todayPage.js"></script>
+    <script src="weekPage.js"></script>
+    <script src="outputting.js"></script>
+
+    <script src="moment.js"></script>
+    
+    
+    <script src="configAdmin.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
+    <script>
+        // Initialize Firebase        
+        firebase.initializeApp(config);
+    </script>
+    <script src="script.js"></script>
+    <script src="checkPassword.js"></script>
+    <script src="showhide.js"></script>
+    <link rel="stylesheet" href="AdminCSS.css">
+
+    <!-- STYLE -->
+    <style>
+        #login{
+            display: none;
+        }
+        #todayPage{
+            display: block;
+        }
+        #weekPage{
+            display: none;
+        }
+
+    </style>
+
+    <script>
+
+            window.onload = (()=>{
+                //alert('yup');
+                var input = document.getElementById("newDate");
+                input.addEventListener("keyup", function(event) {
+                    // Cancel the default action, if needed
+                    event.preventDefault();
+                    // Number 13 is the "Enter" key on the keyboard
+                    if (event.keyCode === 13) {
+                      // Trigger the button element with a click
+                      changeTodayAndRunWithIt();
+                      document.getElementById("newDate").value = "";
+                    }
+                  });
+            });
+    </script>
+
+
+</head>
+<body>
+    <h2>Admin Dashboard</h2>
+
+    <div id="login">
+        <input type="text" id="textToCheck" name="password">
+        <button id="checkPassword">Submit</button>
+    </div>
+
+    <div id="todayPage">
+        <div id="todayPageHeading">
+            <h1>Today Page</h1>
+            <div id='dateDiv'>
+                <textarea id='newDate'></textarea>
+
+            </div>
+        </div>
+        <div id="grid">
+            <!-- <div class="name">hello</div>
+            <div class="name">yup</div> -->
+        </div>
+
+    </div>
+
+
+    <div id="weekPage">
+        <h1>Week Page</h1>
+
+    </div>
+
+
+</body>
+</html>
