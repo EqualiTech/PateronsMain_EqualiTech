@@ -1,0 +1,13 @@
+UX:
+- Today Page
+- Week Page
+- Organizing dates
+- spitout all Current paterons on Today Page
+
+
+
+
+3 Sets of Data:
+- i have 10 paterons Today
+- today's date is shown
+- 
