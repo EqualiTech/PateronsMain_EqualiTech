@@ -4,11 +4,7 @@ window.onload = (() =>{
     document.getElementById('submitButton').addEventListener('click', ()=>{
         // sends data to firebase
         sendData(document.getElementById('userName').value);
-    });
-
-    document.getElementById('print').addEventListener('click', ()=>{
-        printMeOut();
-    });
+    }); 
 });
 
 //global firebase variable
@@ -30,15 +26,3 @@ function sendData(name){
 }
 
 
-// function that pulls all paterons into global data
-async function pullData(){
-    await general('/paterons/');
-    return globalData;
-}
-
-// function to spit out paterons
-async function printMeOut(){
-    await pullData();
-
-    document.getElementById('output').innerHTML = JSON.stringify(globalData);
-}
