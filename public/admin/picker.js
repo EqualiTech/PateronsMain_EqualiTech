@@ -9,3 +9,7 @@ var picker = new Pikaday({
         console.log(this.getMoment().format('Do MMMM YYYY'));
     }
 });
+
+// document.getElementById('newDate').addEventListener('click', ()=>{
+//     document.getElementById('newDate').blur();
+// });
