@@ -36,6 +36,20 @@
         #weekPage{
             display: none;
         }
+        #todayPageHeading{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        #dailyNumber{
+            margin: auto;
+            width: 50%;
+            font-size: 1.3em;
+            margin-top: -1em;
+        }
+        #newDate{
+            margin-top: 10%;
+            width: 5em;
+        }
 
     </style>
 
@@ -72,7 +86,9 @@
             <h1>Today Page</h1>
             <div id='dateDiv'>
                 <textarea id='newDate'></textarea>
-
+            </div>
+            <div id="dailyNumber">
+                <h1 id="daily_header">--</h1>
             </div>
         </div>
         <div id="grid">

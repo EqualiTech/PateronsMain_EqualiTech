@@ -86,8 +86,15 @@ async function amISameDate(todaysDate){
         
     }
 
-
+    
+    // final step, print out array of matching paterons
     await print(myArray);
 
+    makeCountHeader(myArray.length);
 
+}
+
+//================================================
+function makeCountHeader(num){
+    document.getElementById('daily_header').innerHTML = num;
 }

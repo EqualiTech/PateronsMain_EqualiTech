@@ -1,0 +1,6 @@
+
+Admin Dashboard
+https://equalitech-1e0a1.firebaseapp.com/admin/admin.html
+
+Pateron Form
+https://equalitech-1e0a1.firebaseapp.com/form/index.html
