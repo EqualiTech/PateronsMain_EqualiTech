@@ -1,8 +1,8 @@
 /* CSS form for Admin of TechLab Admin Dashboard */
 #grid{
     display: grid;
-    grid-template-columns: .5fr .5fr;
-    grid-gap: 1em;
+    grid-template-columns: .4fr .2fr;
+    grid-gap: .2em;
     /* grid-template-rows: minmax(auto, 60%); */
 
 }
