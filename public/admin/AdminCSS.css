@@ -1,6 +1,4 @@
 /* CSS form for Admin of TechLab Admin Dashboard */
-
-
 #grid{
     display: grid;
     grid-template-columns: .5fr .5fr;
@@ -27,4 +25,18 @@ textarea{
     display: grid;
     grid-template-columns: .3fr 1fr;
     grid-gap: 1em;
+}
+
+
+/* For Desktop sized viewing */
+@media only screen and (min-width: 400px){
+    #todayPageHeading{
+        display: grid;
+        grid-template-columns: 1.3fr 3fr 1fr;
+        grid-gap: 1em;
+       
+    }
+    .item{
+        font-size: 2.3em;
+    }
 }

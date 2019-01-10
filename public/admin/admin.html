@@ -12,8 +12,10 @@
     <script src="outputting.js"></script>
 
     <script src="moment.js"></script>
+
     
-    
+
+
     <script src="configAdmin.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
     <script>
@@ -83,12 +85,12 @@
 
     <div id="todayPage">
         <div id="todayPageHeading">
-            <h1>Today Page</h1>
-            <div id='dateDiv'>
-                <textarea id='newDate'></textarea>
+            <h1 class="item">Today Page</h1>
+            <div  id='dateDiv'>
+                <input class="item" id='newDate'>
             </div>
-            <div id="dailyNumber">
-                <h1 id="daily_header">--</h1>
+            <div  id="dailyNumber">
+                <h1 class="item" id="daily_header">--</h1>
             </div>
         </div>
         <div id="grid">
@@ -103,6 +105,12 @@
         <h1>Week Page</h1>
 
     </div>
+
+    <!-- Date Picker for calender date thing 
+        has to be at end of file!!!-->
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+    <script src="picker.js"></script>
 
 
 </body>
