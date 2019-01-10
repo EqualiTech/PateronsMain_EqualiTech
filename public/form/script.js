@@ -4,6 +4,7 @@ window.onload = (() =>{
     document.getElementById('submitButton').addEventListener('click', ()=>{
         // sends data to firebase
         sendData(document.getElementById('userName').value);
+        document.getElementById('userName').value = "";
     }); 
 });
 
