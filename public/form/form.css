@@ -1,0 +1,35 @@
+@media screen  and (max-width:550px){
+    .spaceMe{
+        margin: .3em;
+        padding: .5em;
+        width: 88%;
+        margin-left: auto;
+        margin-right: auto;
+    
+    }
+    
+}
+.spaceMe{
+    margin: 2em;
+    padding: 1em;
+    width: 55%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.grid1{
+    display: grid;
+    grid-template-columns: 1fr;
+    /* align-content: center; */
+    justify-items: center;
+
+}
+#userName{
+    width: 100%;
+}
+.lightGreen{
+    color: lightgreen;
+}
+.userName{
+    margin-top: 1em;
+  /* margin-bottom: .2em;   */
+}

@@ -1,9 +1,8 @@
-/* CSS form for Admin of TechLab Admin Dashboard */
+/* CSS form for Admin of TechLab Admin Dashboard
 #grid{
     display: grid;
     grid-template-columns: .4fr .2fr;
     grid-gap: .2em;
-    /* grid-template-rows: minmax(auto, 60%); */
 }
 
 
@@ -15,12 +14,8 @@
     height: 1em;
     width: 8.8em;
     margin-top: 10%;
-    /* font-size: 1.1em; */
 }
 
-/* #dateDiv{
-    margin-top: 5%;
-} */
 
 #todayPageHeading{
     display: grid;
@@ -30,7 +25,6 @@
 }
 
 
-/* For Desktop sized viewing */
 @media only screen and (min-width: 400px){
     #todayPageHeading{
         display: grid;
@@ -45,9 +39,8 @@
         height: 1em;
         width: 7em;
         margin-top: 10%;
-        /* font-size: 1.1em; */
     }
-}
+} */
 
 
 /* #login{
@@ -71,3 +64,29 @@
 } */
 /* //======================================== */
 /* NEW CSS - geos here */
+#login{
+    display: none;
+}
+#weekPage{
+    display: none;
+}
+.margMe{
+    margin: 2em;
+    padding: 2em;
+    width: 88%;
+
+}
+.grid1{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1em;
+    align-items: center;
+    /* margin-top: auto; */
+}
+#today{
+    font-size: 1.3em;
+}
+#dailyNumber{
+    font-size: 1em;
+    margin: auto;
+}

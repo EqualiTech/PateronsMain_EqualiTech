@@ -25,6 +25,7 @@
     <script src="script.js"></script>
     <script src="checkPassword.js"></script>
     <script src="showhide.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="AdminCSS.css">
 
     <!-- STYLE -->
@@ -57,34 +58,38 @@
 </head>
 <body>
     
-    <h2>Admin Dashboard</h2>
+    <div class="w3-container w3-card-2 margMe">
 
-    <div id="login">
-        <input type="text" id="textToCheck" name="password">
-        <button id="checkPassword">Submit</button>
-    </div>
-
-    <div id="todayPage">
-        <div id="todayPageHeading">
-            <h1 class="item">Today Page</h1>
-            <div  id='dateDiv'>
-                <input class="item" id='newDate' >
-            </div>
-            <div  id="dailyNumber">
-                <h1 class="item" id="daily_header">--</h1>
-            </div>
+        <h2 class="w3-green">Admin Dashboard</h2>
+    
+    
+        <div id="login">
+            <input type="text" id="textToCheck" name="password">
+            <button id="checkPassword">Submit</button>
         </div>
-        <div id="grid">
-            <!-- <div class="name">hello</div>
-            <div class="name">yup</div> -->
+    
+        <div id="todayPage" class="grid1">
+            <!-- <div id="todayPageHeading"> -->
+                <h1 id="today" class="item">Today Page</h1>
+                <div  id='dateDiv'>
+                    <input class="item" id='newDate' >
+                </div>
+                <div  id="dailyNumber">
+                    <h1 class="item" id="daily_header">--</h1>
+                </div>
+            <!-- </div> -->
+            <div id="grid">
+                <!-- <div class="name">hello</div>
+                <div class="name">yup</div> -->
+            </div>
+    
         </div>
-
-    </div>
-
-
-    <div id="weekPage">
-        <h1>Week Page</h1>
-
+    
+    
+        <div id="weekPage">
+            <h1>Week Page</h1>
+    
+        </div>
     </div>
 
     <!-- Date Picker for calender date thing 
