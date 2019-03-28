@@ -90,3 +90,14 @@
     font-size: 1em;
     margin: auto;
 }
+@media screen and (max-width:400px){
+    #todayPageHeading{
+        width: auto;
+    }
+    .title{
+        font-size: 1em;
+    }
+    #newDate{
+        width:100%;
+    }
+}
