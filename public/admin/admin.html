@@ -27,7 +27,8 @@
     <script src="showhide.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="AdminCSS.css">
-
+    <link rel="stylesheet" href="pikaday.css">
+    <link rel="stylesheet" href="site.css">
     <!-- STYLE -->
     <style>
         
@@ -57,38 +58,45 @@
 
 </head>
 <body>
-    
-    <div class="w3-container w3-card-2 margMe">
+    <div class="centeredGrid">
 
-        <h2 class="w3-green title">Admin Dashboard</h2>
+        <div class="w3-card-2 margMe">
     
-    
-        <div id="login">
-            <input type="text" id="textToCheck" name="password">
-            <button id="checkPassword">Submit</button>
-        </div>
-    
-        <div id="todayPageHeading">
-        <div id="todayPage" class="grid1">
-                <h1 id="today" class="item">Today Page</h1>
-                <div  id='dateDiv'>
-                    <input class="item" id='newDate' >
-                </div>
-                <div  id="dailyNumber">
-                    <h1 class="item" id="daily_header">--</h1>
-                </div>
+            <h2 class="w3-green title">Admin Dashboard</h2>
+        
+        
+            <div id="login">
+                <input type="text" id="textToCheck" name="password">
+                <button id="checkPassword">Submit</button>
             </div>
-            <div id="grid">
-                <!-- <div class="name">hello</div>
-                <div class="name">yup</div> -->
+        
+            <div id="todayPageHeading">
+            <div id="todayPage" class="grid1">
+                    <h1 id="today" class="item">Today Page</h1>
+                    <!-- <div  id='dateDiv'> -->
+                        <!-- </div> -->
+                    <!-- <div></div> -->
+                    <div  id="dailyNumber">
+                        <h1 class="item" id="daily_header">--</h1>
+                    </div>
+                    <input class="item" id='dateCentered' >
             </div>
-    
+            <!-- <input type="text" id="dateCentered"></input> -->
+                <div id="grid">
+                    <!-- <div class="name">hello</div>
+                    <div class="name">yup</div> -->
+                </div>
+        
+            </div>
+        
+        
+            <div id="weekPage">
+                <h1>Week Page</h1>
+        
+            </div>
         </div>
-    
-    
-        <div id="weekPage">
-            <h1>Week Page</h1>
-    
+        <div>
+            <h1>hello</h1>
         </div>
     </div>
 
