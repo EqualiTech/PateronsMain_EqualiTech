@@ -4,11 +4,11 @@
     var picker = new Pikaday({
         field: document.getElementById('dateCentered'),
         format: 'MM/DD/YYYY',
-        onSelect: function() {
-            changeTodayAndRunWithIt();
+        onSelect: async function() {
+            await changeTodayAndRunWithIt();
             console.log(this.getMoment().format('Do MMMM YYYY'));
         }, 
-        position:'Bottom left', 
+        position:'Bottom left',
         // reposition: false,
     });
 

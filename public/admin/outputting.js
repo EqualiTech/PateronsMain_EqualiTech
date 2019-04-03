@@ -19,14 +19,18 @@ async function getOrganized(){
     }
 }
 
-// let hmtlString = "";
+let hmtlString = "";
 function print(array){
     hmtlString = "";
     document.getElementById('grid').innerHTML = "";
     // hmtlString = document.getElementById('grid').innerHTML;
     for(var i=0; i<myArray.length; i++){
-        hmtlString = hmtlString +  "<div>"+array[i].name+"</div>"+"<div>"+array[i].time+"</div>";
+        // hmtlString = hmtlString +  "<div>"+array[i].name+"</div>"+"<div>"+array[i].time+"</div>";
+        hmtlString = hmtlString + makeStr(["<div class='w3-card spaceMe'>", "<div><b>", array[i].name, "</b></div>", "<div>", array[i].time, "</div>", "</div>"]);
         
+
+
+
         // document.getElementById('grid').innerHTML = document.getElementById('grid').innerHTML + "<div>"+array[i].name+"</div>"+"<div>"+array[i].time+"</div>";
         console.log('myArray', myArray);
         console.log('hmtlString', hmtlString);
@@ -38,11 +42,11 @@ function print(array){
 }
 
 //========================================
-
+var date;
 function changeTodayAndRunWithIt(){
     //function that changes 'Today's Page' to date entered into textarea
 
-    var date = document.getElementById("newDate").value;
+    date = document.getElementById("dateCentered").value;
     
     date = date.trim();
     if(moment(date)._isValid==true){
