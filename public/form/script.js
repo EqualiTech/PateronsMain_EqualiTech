@@ -6,7 +6,6 @@ window.onload = (() =>{
         sendData(document.getElementById('userName').value);
         document.getElementById('userName').value = "";
     }); 
-    //NEXT? - get working on Smart Phone
     document.getElementById('dateCentered').addEventListener("keyup", function(event) {
         // Number 13 is the "Enter" key on the keyboard
             if (event.keyCode === 13) {

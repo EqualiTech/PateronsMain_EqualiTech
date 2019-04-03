@@ -1,3 +1,6 @@
+//NEXT? - work on creating a week page
+
+
 var m1;
 var arrayOfDates=[];
 function momentRun(datePassed){
