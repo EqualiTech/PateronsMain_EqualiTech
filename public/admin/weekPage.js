@@ -1,5 +1,5 @@
 //NEXT? - work on creating a week page
-
+//NEXT? - figure out how to print out week page and begin development
 
 var m1;
 var arrayOfDates=[];
