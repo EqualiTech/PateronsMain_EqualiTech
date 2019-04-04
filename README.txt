@@ -17,3 +17,7 @@ STEPS:
     - only pull a month from previous arrayOfDates 
         - don't want to pull ALL Data EVERYTIME
 
+
+
+
+NEXT? - drilling down data from Firebase, practice
