@@ -23,7 +23,7 @@
         // Initialize Firebase        
         firebase.initializeApp(config);
     </script>
-    <script src="script.js"></script>
+    <script src="scriptAdmin.js"></script>
     <script src="checkPassword.js"></script>
     <script src="showhide.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -51,9 +51,18 @@
                       document.getElementById("newDate").value = "";
                     }
                   }); */
-                  
+                  document.getElementById('dateCentered').addEventListener("keyup", function(event) {
+                // Number 13 is the "Enter" key on the keyboard
+                    if (event.keyCode === 13) {
+                    // Cancel the default action, if needed
+                    event.preventDefault();
+                    // Trigger the button element with a click
+                    //   document.getElementById("myBtn").click();
+                    changeTodayAndRunWithIt();
+                    }
                       
             });
+        });
     </script>
 
 
