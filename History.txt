@@ -1,4 +1,8 @@
 April 
 16
 - did work on the 'Saved' after button press
--
+- working on 'deleting' paterons
+- restruchuring array
+- isOddOrEven() - function, working??
+- recreating 'paterons' into firebase...
+- 

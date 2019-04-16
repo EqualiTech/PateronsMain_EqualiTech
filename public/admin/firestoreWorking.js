@@ -36,6 +36,7 @@ function pullDataEven(path){
 //================================================
 
 var dataMe = []; var firestorePaths = [];
+var slashCount = 0;
 async function queryData(path){
     dataMe=[]; firestorePaths=[];
     await db2.collection(path).get().
@@ -49,10 +50,15 @@ async function queryData(path){
             firestorePaths.push(dataMe[i].ref.path);
         }
         console.log('firestorePaths', firestorePaths);
-    });
-    
+    });  
+}
 
-    
+function isOddOrEven(str){
+    if((str.split('/').length-1)%2==0){
+        return "even";
+    }else{
+        return "odd";
+    }
 }
 
 //NEXT? - figuring out how to compile all 'fields'
