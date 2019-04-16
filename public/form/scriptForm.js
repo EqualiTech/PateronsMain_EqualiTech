@@ -2,11 +2,12 @@
 // send data using textbox value
 window.onload = (() =>{
     document.getElementById('submitButton').addEventListener('click', ()=>{
-        // sends data to firebase
-        sendData(document.getElementById('userName').value);
-        document.getElementById('userName').value = "";
-        alert('Saved!');
-            }); 
+            // sends data to firebase
+            sendData(document.getElementById('userName').value);
+            document.getElementById('userName').value = "";
+            alert('Saved!');
+            document.getElementById('changeMeWhenSaved').innerHTML = makeStr(['<h1>','Saved', '</h1>']);
+        }); 
         });
     //   });
     // };
@@ -31,3 +32,7 @@ function sendData(name){
 }
 
 
+function makeStr(arr){
+    //function that joins array elements sent to it
+    return arr.join("")
+}

@@ -1,8 +1,0 @@
-
-
-- get all data
-- get length of paterons
-- loop through
-- add to myArray[]
-- compare against date
-- output
