@@ -26,9 +26,9 @@ function print(array){
     // hmtlString = document.getElementById('grid').innerHTML;
     for(var i=0; i<myArray.length; i++){
         // hmtlString = hmtlString +  "<div>"+array[i].name+"</div>"+"<div>"+array[i].time+"</div>";
-        hmtlString = hmtlString + makeStr(["<div class='w3-card spaceMe'>", "<div><b>", array[i].name, "</b></div>", "<div>", array[i].time, "</div>", "</div>"]);
+        hmtlString = hmtlString + makeStr(["<div class='gridForOutputs'>", "<div>", "<button>", "-", "</button>", "</div>" , "<div class='w3-card spaceMe'>", "<div><b>", array[i].name, "</b></div>", "<div>", array[i].time, "</div>", "</div>"]);
         
-
+x
 
 
         // document.getElementById('grid').innerHTML = document.getElementById('grid').innerHTML + "<div>"+array[i].name+"</div>"+"<div>"+array[i].time+"</div>";

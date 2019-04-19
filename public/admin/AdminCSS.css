@@ -137,3 +137,10 @@
     margin: 1em;
     padding: .8em;
 }
+.gridForOutputs{
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+    grid-gap: 1em;
+}
+
+
