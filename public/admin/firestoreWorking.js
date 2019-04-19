@@ -73,3 +73,20 @@ function pullFields(path){
 }
 
 //NEX? - working to get multi layered collections
+//================================================
+
+//where function 
+function whereFinder(){
+    d2.collection('dummy').where('date')
+} 
+
+function comparingIsDate(input){
+    var todayDate = new Date();
+    var inputDate = new Date(input)
+
+    if(inputDate.setHours(0,0,0,0) == todayDate.setHours(0,0,0,0)){
+        console.log('true');
+    }else{
+        console.log('false');
+    }
+}
