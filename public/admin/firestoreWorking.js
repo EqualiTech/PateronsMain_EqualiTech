@@ -1,6 +1,9 @@
 //file that deals with creating firestore profiles of paterons
+const db2 = firebase.firestore();
 
-var db2 = firebase.firestore();
+const settings = {/* your settings... */ timestampsInSnapshots: true};
+db2.settings(settings);
+
 
 function addDataToFirestoreForCompletelyNew(path, data){   
     db2.collection(path).add(data).
@@ -76,8 +79,18 @@ function pullFields(path){
 //================================================
 
 //where function 
-function whereFinder(){
-    d2.collection('dummy').where('date')
+var docdata;
+function whereFinder(inputDate){
+    inputDate=new Date(inputDate);
+    input = inputDate.setHours(0,0,0,0);
+    db2.collection('dummy').where('date', '==', input)
+    .get()
+    .then((snapshot)=>{
+        snapshot.forEach((doc)=>{
+            docdata = doc.data();
+            console.log('doc.data()', doc.data());
+        });
+    });
 } 
 
 function comparingIsDate(input){
