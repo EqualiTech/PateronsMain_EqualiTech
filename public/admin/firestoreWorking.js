@@ -79,11 +79,17 @@ function pullFields(path){
 //================================================
 
 //where function 
-var docdata;
+var docdata; var afterDate; var beforeDate;
 function whereFinder(inputDate){
-    inputDate=new Date(inputDate);
-    input = inputDate.setHours(0,0,0,0);
-    db2.collection('dummy').where('date', '==', input)
+    //function that takes in an input date,
+    //then calls where() for all logins before and after the date given
+    var newDate = new Date(inputDate);
+    afterDate = new Date();
+    beforeDate = new Date();
+    afterDate.setDate(newDate.getDate()+1);
+    beforeDate.setDate(newDate.getDate()-1);
+    // input = inputDate.setHours(0,0,0,0);
+    db2.collection('dummy').where('date', '<', afterDate).where('date', '>', beforeDate)
     .get()
     .then((snapshot)=>{
         snapshot.forEach((doc)=>{
