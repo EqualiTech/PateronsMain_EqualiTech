@@ -35,7 +35,7 @@ async function queryData(path){
 
 
 var savedDoc=[];
-function pullData(path){
+function pullDataFromFirestore(path){
     if(isOddOrEven(path)=="odd"){
         db2.doc(path).get().
         then((doc)=>{
@@ -82,7 +82,7 @@ function pullFields(path){
 var docdata; var docId; var docMe=[]; var afterDate; var beforeDate;
 var whereFinderPaths = [];
 var docDataArray=[];
-function whereFinder(inputDate){
+function whereFinder(inputDate){    //function used in outputting.js to be used with date passed to this function
     //function that takes in an input date,
     //then calls where() for all logins before and after the date given
 
@@ -111,6 +111,8 @@ function whereFinder(inputDate){
             whereFinderPaths.push(docMe[i].ref.path);
         }
     });
+
+    //return docDataArray!!!!
 } 
 
 function comparingIsDate(input){

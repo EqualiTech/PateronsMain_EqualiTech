@@ -7,6 +7,7 @@
         onSelect: async function() {
             await changeTodayAndRunWithIt();
             console.log(this.getMoment().format('Do MMMM YYYY'));
+            
         }, 
         position:'Bottom left',
         // reposition: false,

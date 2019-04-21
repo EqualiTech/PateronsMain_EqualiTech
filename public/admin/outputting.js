@@ -51,7 +51,9 @@ function changeTodayAndRunWithIt(){
     date = date.trim();
     if(moment(date)._isValid==true){
         console.log('momentDate', moment(date));
-        amISameDate(moment(date));
+        // amISameDate(moment(date));
+
+        whereFinder(moment(date));
 
     }else{
         alert("Not a Date!\nTry again...")
