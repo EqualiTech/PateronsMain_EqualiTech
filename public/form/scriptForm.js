@@ -1,9 +1,19 @@
+const db2 = firebase.firestore();
+const settings = {/* your settings... */ timestampsInSnapshots: true};
+  db2.settings(settings);
+
 // on window load, attach addEventListener
 // send data using textbox value
 window.onload = (() =>{
     document.getElementById('submitButton').addEventListener('click', ()=>{
             // sends data to firebase
+
+            newDate = new Date();
+
             sendData(document.getElementById('userName').value);
+            addDataToFirestoreForCompletelyNew('paterons', {name:document.getElementById('userName').value, date:newDate})
+
+
             document.getElementById('userName').value = "";
             alert('Saved!');
             document.getElementById('changeMeWhenSaved').innerHTML = makeStr(['<h1>','Saved', '</h1>']);
@@ -35,4 +45,11 @@ function sendData(name){
 function makeStr(arr){
     //function that joins array elements sent to it
     return arr.join("")
+}
+
+function addDataToFirestoreForCompletelyNew(path, data){   
+    db2.collection(path).add(data).
+    catch((error)=>{
+        console.error('error caught', error);
+    });   
 }
