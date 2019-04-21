@@ -81,12 +81,14 @@ function pullFields(path){
 //where function 
 var docdata; var docId; var docMe=[]; var afterDate; var beforeDate;
 var whereFinderPaths = [];
+var docDataArray=[];
 function whereFinder(inputDate){
     //function that takes in an input date,
     //then calls where() for all logins before and after the date given
 
     //reseting whereFinderPaths[] 
     whereFinderPaths = [];
+    docDataArray=[];
 
     var newDate = new Date(inputDate);
     afterDate = new Date();
@@ -99,9 +101,11 @@ function whereFinder(inputDate){
     .then((snapshot)=>{
         snapshot.forEach((doc)=>{
             docdata = doc.data();
+            docDataArray.push(docdata);
             console.log('doc.data()', doc.data());
             docId = doc.id;
             docMe.push(doc);
+
         });
         for(var i in docMe){
             whereFinderPaths.push(docMe[i].ref.path);

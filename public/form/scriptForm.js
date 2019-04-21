@@ -8,10 +8,11 @@ window.onload = (() =>{
     document.getElementById('submitButton').addEventListener('click', ()=>{
             // sends data to firebase
 
-            newDate = new Date();
-
+            
             sendData(document.getElementById('userName').value);
-            addDataToFirestoreForCompletelyNew('paterons', {name:document.getElementById('userName').value, date:newDate})
+
+            newDate = new Date();
+            addDataToFirestoreForCompletelyNew('paterons', {name:document.getElementById('userName').value, date:newDate});
 
 
             document.getElementById('userName').value = "";
