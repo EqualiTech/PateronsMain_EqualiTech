@@ -19,27 +19,27 @@ async function getOrganized(){
     }
 }
 
-let hmtlString = "";
-function print(array){
-    hmtlString = "";
-    document.getElementById('grid').innerHTML = "";
-    // hmtlString = document.getElementById('grid').innerHTML;
-    for(var i=0; i<myArray.length; i++){
-        // hmtlString = hmtlString +  "<div>"+array[i].name+"</div>"+"<div>"+array[i].time+"</div>";
-        hmtlString = hmtlString + makeStr(["<div class='gridForOutputs'>", "<div>", "<button>", "-", "</button>", "</div>" , "<div class='w3-card spaceMe'>", "<div><b>", array[i].name, "</b></div>", "<div>", array[i].time, "</div>", "</div>"]);
+// let hmtlString = "";
+// function print(array){
+//     hmtlString = "";
+//     document.getElementById('grid').innerHTML = "";
+//     // hmtlString = document.getElementById('grid').innerHTML;
+//     for(var i=0; i<myArray.length; i++){
+//         // hmtlString = hmtlString +  "<div>"+array[i].name+"</div>"+"<div>"+array[i].time+"</div>";
+//         hmtlString = hmtlString + makeStr(["<div class='gridForOutputs'>", "<div>", "<button>", "-", "</button>", "</div>" , "<div class='w3-card spaceMe'>", "<div><b>", array[i].name, "</b></div>", "<div>", array[i].time, "</div>", "</div>"]);
         
-x
+// x
 
 
-        // document.getElementById('grid').innerHTML = document.getElementById('grid').innerHTML + "<div>"+array[i].name+"</div>"+"<div>"+array[i].time+"</div>";
-        console.log('myArray', myArray);
-        console.log('hmtlString', hmtlString);
-    }
-    document.getElementById('grid').innerHTML = "";
-    document.getElementById('grid').innerHTML = hmtlString;
-    hmtlString = "";
+//         // document.getElementById('grid').innerHTML = document.getElementById('grid').innerHTML + "<div>"+array[i].name+"</div>"+"<div>"+array[i].time+"</div>";
+//         console.log('myArray', myArray);
+//         console.log('hmtlString', hmtlString);
+//     }
+//     document.getElementById('grid').innerHTML = "";
+//     document.getElementById('grid').innerHTML = hmtlString;
+//     hmtlString = "";
     
-}
+// }
 
 //========================================
 var date;
@@ -54,6 +54,12 @@ function changeTodayAndRunWithIt(){
         // amISameDate(moment(date));
 
         whereFinder(moment(date));
+        // while(document.getElementById('grid').innerHTML == ""){
+        document.getElementById('grid').innerHTML = "";
+        populatePaterons();
+            
+
+        // }
 
     }else{
         alert("Not a Date!\nTry again...")
@@ -63,3 +69,40 @@ function changeTodayAndRunWithIt(){
 
 }
 
+//================================================
+//function outputting NEW
+
+let hmtlString = "";
+function outputNew(array){
+    hmtlString = "";
+    document.getElementById('grid').innerHTML = "";
+    for(var i=0; i<array.length; i++){
+        hmtlString = hmtlString + makeStr(["<div class='gridForOutputs'>",
+        "<div class='middleMeDeleteButton'>", "<button>",
+        "-", "</div>",  
+        "</button>", 
+        "<div class='w3-card spaceMe'>", 
+        "<div><b>", array[i].name, "</b></div>", "<div>", array[i].date.toDate(), "</div>", "</div>","</div>"]);
+
+    }
+
+    document.getElementById('grid').innerHTML = "";
+    document.getElementById('grid').innerHTML = hmtlString;
+
+}
+
+function populatePaterons(){
+    wait(1000).then(()=>{
+        outputNew(docDataArray);
+        if(document.getElementById('grid').innerHTML == ""&&docDataArray!=""){
+            populatePaterons();
+        }
+        console.log('docDataArray', docDataArray);
+    });
+}
+
+
+//================================================
+function wait(timout){
+    return new Promise(resolve=>setTimeout(resolve, timout));
+}
