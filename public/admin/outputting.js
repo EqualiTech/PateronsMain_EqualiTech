@@ -54,7 +54,6 @@ function changeTodayAndRunWithIt(){
         // amISameDate(moment(date));
 
         whereFinder(moment(date));
-        // while(document.getElementById('grid').innerHTML == ""){
         document.getElementById('grid').innerHTML = "";
         populatePaterons();
             
