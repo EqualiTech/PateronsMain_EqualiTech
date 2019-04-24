@@ -82,7 +82,8 @@ function pullFields(path){
 var docdata; var docId; var docMe=[]; var afterDate; var beforeDate;
 var whereFinderPaths = [];
 var docDataArray=[];
-function whereFinder(inputDate){    //function used in outputting.js to be used with date passed to this function
+var originDate;
+function whereFinder(inputMe){    //function used in outputting.js to be used with date passed to this function
     //function that takes in an input date,
     //then calls where() for all logins before and after the date given
 
@@ -90,13 +91,26 @@ function whereFinder(inputDate){    //function used in outputting.js to be used 
     whereFinderPaths = [];
     docDataArray=[];
 
-    var newDate = new Date(inputDate);
-    afterDate = new Date();
-    beforeDate = new Date();
-    afterDate.setDate(newDate.getDate()+1);
-    beforeDate.setDate(newDate.getDate()-1);
+    originDate = new Date(inputMe);
+    originDate = new Date(originDate);
+    afterDate = new Date(originDate);
+    beforeDate = new Date(originDate);
+
+    afterDate = afterDate.setHours(23, 59, 59, 0);
+    beforeDate = beforeDate.setHours(0, 0, 0, 0);
+
+    afterDate = new Date(afterDate);
+    beforeDate = new Date(beforeDate);
+
+    // afterDate = afterDate.setDate(originDate.getDate()+1);
+    // beforeDate = beforeDate.setDate(originDate.getDate()-1);
+
     // input = inputDate.setHours(0,0,0,0);
-    db2.collection('paterons').where('date', '<', afterDate).where('date', '>', beforeDate)
+
+
+    db2.collection('paterons')
+    .where('date', '<', afterDate).where('date', '>', beforeDate)
+    // .where('date', '==', originDate)
     .get()
     .then((snapshot)=>{
         snapshot.forEach((doc)=>{
@@ -125,3 +139,6 @@ function comparingIsDate(input){
         console.log('false');
     }
 }
+
+
+//NEXT? - get a few paterons switched over to new Firestore database!!!

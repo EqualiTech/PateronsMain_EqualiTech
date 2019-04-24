@@ -97,6 +97,7 @@ function populatePaterons(){
             populatePaterons();
         }
         console.log('docDataArray', docDataArray);
+        document.getElementById('daily_header').innerText = docDataArray.length;
     });
 }
 
