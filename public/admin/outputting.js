@@ -77,7 +77,7 @@ function outputNew(array){
     document.getElementById('grid').innerHTML = "";
     for(var i=0; i<array.length; i++){
         hmtlString = hmtlString + makeStr(["<div class='gridForOutputs'>",
-        "<div class='middleMeDeleteButton'>", "<button>",
+        "<div class='middleMeDeleteButton'>", "<button id='", array[i].date.toDate(), "'", "class='", "deleteButton", i, "'>",
         "-", "</div>",  
         "</button>", 
         "<div class='w3-card spaceMe'>", 
@@ -102,6 +102,20 @@ function populatePaterons(){
 }
 
 
+var arrayOfClass=[];
+function gatorAddListenerDelete(num){
+    // arrayOfClass=document.getElementsByClassName('deleteButton');
+    // for(var i=0; i<docDataArray.length-1; i++){
+    //     Gator(document.getElementsByClassName('deleteButton')[i]).on('click', ()=>{
+    //         // alert(arrayOfClass[i].id);
+    //     })
+
+    // }
+
+    Gator(document.getElementsByClassName('deleteButton'+i)).on('click', ()=>{
+            
+    });
+}
 //================================================
 function wait(timout){
     return new Promise(resolve=>setTimeout(resolve, timout));
