@@ -1,9 +1,10 @@
 const db2 = firebase.firestore();
-const settings = {/* your settings... */ timestampsInSnapshots: true};
-  db2.settings(settings);
+
+
 
 // on window load, attach addEventListener
 // send data using textbox value
+var sendingDate;
 window.onload = (() =>{
     document.getElementById('submitButton').addEventListener('click', ()=>{
             // sends data to firebase
@@ -11,8 +12,9 @@ window.onload = (() =>{
             
             sendData(document.getElementById('userName').value);
 
-            newDate = new Date();
-            addDataToFirestoreForCompletelyNew('paterons', {name:document.getElementById('userName').value, date:newDate});
+            sendingDate = new Date();
+            // sendingDate = sendingDate.getTime()/1000;
+            addDataToFirestoreForCompletelyNew('paterons', {name:document.getElementById('userName').value, date:sendingDate});
 
 
             document.getElementById('userName').value = "";

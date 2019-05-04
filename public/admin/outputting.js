@@ -28,18 +28,9 @@ async function getOrganized(){
 //         // hmtlString = hmtlString +  "<div>"+array[i].name+"</div>"+"<div>"+array[i].time+"</div>";
 //         hmtlString = hmtlString + makeStr(["<div class='gridForOutputs'>", "<div>", "<button>", "-", "</button>", "</div>" , "<div class='w3-card spaceMe'>", "<div><b>", array[i].name, "</b></div>", "<div>", array[i].time, "</div>", "</div>"]);
         
-// x
 
 
-//         // document.getElementById('grid').innerHTML = document.getElementById('grid').innerHTML + "<div>"+array[i].name+"</div>"+"<div>"+array[i].time+"</div>";
-//         console.log('myArray', myArray);
-//         console.log('hmtlString', hmtlString);
-//     }
-//     document.getElementById('grid').innerHTML = "";
-//     document.getElementById('grid').innerHTML = hmtlString;
-//     hmtlString = "";
-    
-// }
+
 
 //========================================
 var date;
@@ -91,7 +82,7 @@ function outputNew(array){
         elem3 = document.createElement('button');
         elem3.innerText = '-';
         elem3.id = array[i].date.toDate();
-        elem3.className = 'deleteButton' + i;
+        elem3.className = 'deleteButton';//removed i from here, add back? "+ i"
 
         elem4 = document.createElement('div');
         elem4.className = 'w3-card spaceMe';
@@ -156,26 +147,25 @@ function populatePaterons(){
 
 
 var arrayOfClass=[];
-function gatorAddListenerDelete(i){
-    // arrayOfClass=document.getElementsByClassName('deleteButton');
-    // for(var i=0; i<docDataArray.length-1; i++){
-    //     Gator(document.getElementsByClassName('deleteButton')[i]).on('click', ()=>{
-    //         // alert(arrayOfClass[i].id);
-    //     })
 
-    // }
-
-    for(var i=0; i<docDataArray.length-1;i++){
-        Gator(document.getElementsByClassName('deleteButton'+i)[0]).on('click', ()=>{
-            // console.log('time?', document.getElementsByClassName('deleteButton'+i)[0].id);
-            console.log('i', i);
-        });
-
-    }
+var dateToErase = ""; var dateToBePassed;
+function addListenerDelete(){
+    //function that adds 'event delegation' to 'grid' - div - parent function
+    document.getElementById('grid').addEventListener('click', async (e)=>{
+        if(e.target && e.target.matches(".deleteButton")){
+            console.log('time lapsed?', e.target.id );
+            dateToErase=e.target.id;
+            dateToBePassed = new Date(dateToErase);
+            dateToBePassed = dateToBePassed;
+            await deleteStuff('paterons', dateToBePassed);
+        }
+    });
 
 
 
-    console.log(docDataArray[i].date.toDate());
+
+
+    // console.log(docDataArray[i].date.toDate());
 }
 //================================================
 function wait(timout){

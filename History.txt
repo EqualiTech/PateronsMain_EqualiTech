@@ -6,3 +6,7 @@ April
 - isOddOrEven() - function, working??
 - recreating 'paterons' into firebase...
 - 
+
+TODO
+-between 4/23 & 4/24
+-dates or SOMETHING is going wrong...
