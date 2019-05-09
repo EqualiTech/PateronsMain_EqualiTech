@@ -13,7 +13,7 @@ async function deleteStuff(path, date){
     var deleteMe = await db2.collection(path).where('date', '==', date);
 
     console.log('deleteMe1', deleteMe);
-    await deleteMe.get().then(async (snap)=>{
+     deleteMe.get().then(async (snap)=>{
 
         // const timestamp = snap.get('created_at');
         // const dateMe = timestamp.toDate();
