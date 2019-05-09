@@ -149,15 +149,37 @@ function populatePaterons(){
 var arrayOfClass=[];
 
 var dateToErase = ""; var dateToBePassed;
+var dateLessTmp; var dateMoreTmp;
 function addListenerDelete(){
     //function that adds 'event delegation' to 'grid' - div - parent function
+
+    //NEXT? 
     document.getElementById('grid').addEventListener('click', async (e)=>{
         if(e.target && e.target.matches(".deleteButton")){
             console.log('time lapsed?', e.target.id );
             dateToErase=e.target.id;
             dateToBePassed = new Date(dateToErase);
-            dateToBePassed = dateToBePassed;
-            await deleteStuff('paterons', dateToBePassed);
+
+            
+
+
+            dateLessTmp = new Date();
+            dateLessTmp = dateToBePassed.setSeconds(dateToBePassed.getSeconds() - 1);
+
+            dateMoreTmp = new Date();
+            dateMoreTmp = dateToBePassed.setSeconds(dateToBePassed.getSeconds() + 2);
+
+            var dateLess = new Date(dateLessTmp);
+            // dateLess.setSeconds(dateLessTmp);
+
+            var dateMore = new Date(dateMoreTmp);
+            // dateMore.setSeconds(dateMoreTmp);
+
+
+            console.log('dateLess', dateLess);
+            console.log('dateMore', dateMore);
+
+            await deleteStuff('paterons', dateLess, dateMore);
         }
     });
 

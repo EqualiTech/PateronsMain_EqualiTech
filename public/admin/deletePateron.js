@@ -7,32 +7,58 @@
 
 //make sure to "new Date(<dateToErase>);"
 
-var docSaved=[]; var savedSnap; var deleting;
-async function deleteStuff(path, date){
+var docSaved=[]; var savedSnap; var deleting; var deleteMe;
+async function deleteStuff(path, dateLess, dateMore){
+
+
+    // deleteMe = await db2.collection(path).where('date', '==', date);
+
+    // console.log('deleteMe1', deleteMe);
+    //  deleteMe.get().then(async (snap)=>{
+
+
     docSavedForDeleting=[]
-    var deleteMe = await db2.collection(path).where('date', '==', date);
+    deleteMe = await db2.collection(path).where('date', '>', dateLess).where('date', '<', dateMore);
 
-    console.log('deleteMe1', deleteMe);
-     deleteMe.get().then(async (snap)=>{
 
-        // const timestamp = snap.get('created_at');
-        // const dateMe = timestamp.toDate();
+    // getting();
 
-        savedSnap = snap;
-        snap.forEach(async (doc)=>{
-            console.log('doc', doc.ref.path);
-            await docSaved.push(doc);
-        });
-            var con = confirm('Are you sure you want to DELETE?');
-            if(con){
-                // docSaved.ref.delete();
-                // doc.ref.delete();
-                alert("Deleted!");
-            }else{
-                alert("Canceled...");
-            }
-        //     console.log("Document successfully deleted!");
-        });
+    // function getting(){
+        deleteMe.get().then(async (snap)=>{
+   
+           // const timestamp = snap.get('created_at');
+           // const dateMe = timestamp.toDate();
+   
+           savedSnap = snap;
+           snap.forEach(async (doc)=>{
+               console.log('doc', doc.ref.path);
+               await docSaved.push(doc.data());
+           });
+           
+           var con = confirm('Are you sure you want to DELETE?');
+           if(con){
+               // docSaved.ref.delete();
+               // doc.ref.delete();
+               alert("Deleted!");
+           }else{
+               alert("Canceled...");
+           }
+       //     console.log("Document successfully deleted!");
+       });
+
+    //    wait(700).then(()=>{
+    //         if(deleteMe==""){
+    //             getting();
+    //         }else{
+    //             console.log('snap has value!');
+    //         }
+
+    //    });
+    // }
+
+
+
+
         // .then(function() {
         // }).catch(function(error) {
         // console.error("Error removing document: ", error);
