@@ -10,6 +10,7 @@
 var docSaved=[]; var savedSnap; var deleting; var deleteMe;
 async function deleteStuff(path, dateLess, dateMore){
 
+    docSaved=[];
 
     // deleteMe = await db2.collection(path).where('date', '==', date);
 
@@ -33,17 +34,18 @@ async function deleteStuff(path, dateLess, dateMore){
            snap.forEach(async (doc)=>{
                console.log('doc', doc.ref.path);
                await docSaved.push(doc.data());
-           });
-           
-           var con = confirm('Are you sure you want to DELETE?');
-           if(con){
-               // docSaved.ref.delete();
-               // doc.ref.delete();
-               alert("Deleted!");
-           }else{
-               alert("Canceled...");
-           }
-       //     console.log("Document successfully deleted!");
+               console.log('docSaved', docSaved);
+               
+               var con = confirm('Are you sure you want to DELETE?');
+               if(con){
+                   // docSaved.ref.delete();
+                   doc.ref.delete();
+                   alert("Deleted!");
+                }else{
+                    alert("Canceled...");
+                }
+                //     console.log("Document successfully deleted!");
+            });
        });
 
     //    wait(700).then(()=>{
