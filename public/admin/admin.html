@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.1 user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Admin Dashboard</title>
+
+    
     <script src="helperFunctionsAdmin.js"></script>
     <script src="objects.js"></script>
     <script src="todayPage.js"></script>
@@ -17,18 +19,27 @@
 
     
     <!-- Firestore stuff - Start -->
-    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-app.js"></script> -->
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-auth.js"></script>
+    <script src="makingLoginUIWork.js"></script>
+    <script>
+        var db = firebase.firestore();
+    </script>
+
 
     
     <!-- Firestores stuff - End -->
     
     <script src="configAdmin.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
-    <script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script> -->
+
+
+    <!-- <script>
         // Initialize Firebase        
-        firebase.initializeApp(config);
-    </script>
+        firebase.initializeApp(firebaseConfig);
+    </script> -->
     <script src="scriptAdmin.js"></script>
     <script src="checkPassword.js"></script>
     <script src="showhide.js"></script>

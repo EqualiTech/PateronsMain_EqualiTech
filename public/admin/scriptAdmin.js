@@ -12,7 +12,7 @@
 // });
 
 //global firebase variable
-db = firebase.database();
+db = firebase.firestore();
 
 
 var newDate;
