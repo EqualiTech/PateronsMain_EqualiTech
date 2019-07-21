@@ -20,26 +20,23 @@
     
     <!-- Firestore stuff - Start -->
     <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
-    <!-- <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-app.js"></script> -->
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-auth.js"></script>
-    <script src="makingLoginUIWork.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#config-web-app -->
+    
+        <script src="configAdmin.js"></script>
     <script>
         var db = firebase.firestore();
+            // Your web app's Firebase configuration
+    // Initialize Firebase
+    //firebase.initializeApp(firebaseConfig);
     </script>
-
-
-    
+    <script src="makingLoginUIWork.js"></script>
     <!-- Firestores stuff - End -->
-    
-    <script src="configAdmin.js"></script>
-    <!-- <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script> -->
-
-
-    <!-- <script>
-        // Initialize Firebase        
-        firebase.initializeApp(firebaseConfig);
-    </script> -->
+  
     <script src="scriptAdmin.js"></script>
     <script src="showhide.js"></script>
     <script src="firestoreWorking.js"></script>

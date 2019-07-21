@@ -1,7 +1,7 @@
 // Initialize Firebase
 // Your web app's Firebase configuration
 var firebaseConfig = {
-  apiKey: "AIzaSyC5FbbkqwZJviVmolbsBAOm-NJpq7EOxDA",
+  apiKey: "AIzaSyAzXHOJgiGYneya4c93f0u01roepEjYOlw",
   authDomain: "equalitech-1e0a1.firebaseapp.com",
   databaseURL: "https://equalitech-1e0a1.firebaseio.com",
   projectId: "equalitech-1e0a1",
