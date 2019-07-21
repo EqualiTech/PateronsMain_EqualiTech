@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=100, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Getting Data From Firebase</title>
+    <link rel="stylesheet" href="form.css">
+    <script src="helperFunctions.js"></script>
+    
+
+    
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
+    <script src="config.js"></script>
+    <script>
+        // Initialize Firebase
+       
+        firebase.initializeApp(config);
+    </script>
+    <script src="scriptForm.js"></script>
+</head>
+<body>
+
+<div id="grid1">
+    <div class="w3-card spaceMe">
+        <h1 class="w3-green">
+            <div class="lightGreen">
+                Tech Lab
+            </div>
+            
+        </h1>
+
+        <div id="changeMeWhenSaved">
+            <div class="w3-blue userName">
+                Username:
+    
+            </div>
+            <textarea name="" id="userName" cols="30" rows="1"></textarea>
+            <br><br>
+            <button id="submitButton">Submit</button>
+        </div>
+        <br><br><br>
+        <!-- <button id="print">Print</button> -->
+        <div id="output"></div>
+    
+    </div>
+
+</div>
+    
+</body>
+</html>
