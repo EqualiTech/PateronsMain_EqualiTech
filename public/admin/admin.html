@@ -5,7 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.1 user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Admin Dashboard</title>
-
+    
+    <!-- Firestore stuff - Start -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-auth.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#config-web-app -->
+        
+    <script src="configAdmin.js"></script>
+    <script>
+        var db = firebase.firestore();
+        var db2 = firebase.firestore();
+            // Your web app's Firebase configuration
+    // Initialize Firebase
+    //firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="makingLoginUIWork.js"></script>
+    <!-- Firestores stuff - End -->
     
     <script src="helperFunctionsAdmin.js"></script>
     <script src="objects.js"></script>
@@ -18,25 +37,7 @@
     <script src="deletePateron.js"></script>
 
     
-    <!-- Firestore stuff - Start -->
-    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-auth.js"></script>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
     
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-        https://firebase.google.com/docs/web/setup#config-web-app -->
-    
-        <script src="configAdmin.js"></script>
-    <script>
-        var db = firebase.firestore();
-            // Your web app's Firebase configuration
-    // Initialize Firebase
-    //firebase.initializeApp(firebaseConfig);
-    </script>
-    <script src="makingLoginUIWork.js"></script>
-    <!-- Firestores stuff - End -->
-  
     <script src="scriptAdmin.js"></script>
     <script src="showhide.js"></script>
     <script src="firestoreWorking.js"></script>
@@ -45,12 +46,8 @@
     <link rel="stylesheet" href="AdminCSS.css">
     <link rel="stylesheet" href="pikaday.css">
     <link rel="stylesheet" href="site.css">
-    <!-- STYLE -->
-    <style>
-        
-
-    </style>
-
+  
+    
     <script>
 
             window.onload = (()=>{

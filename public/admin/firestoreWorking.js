@@ -1,5 +1,5 @@
 //file that deals with creating firestore profiles of paterons
-const db2 = firebase.firestore();
+// const db2 = firebase.firestore();
 
 const settings = {/* your settings... */ timestampsInSnapshots: true};  //docdata.date.toDate();
 db2.settings(settings);

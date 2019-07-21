@@ -29,7 +29,7 @@ function login(){
         // ...
       });
 
-    debugger
+    // debugger
 }
 
 
