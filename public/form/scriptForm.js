@@ -1,4 +1,4 @@
-const db = firebase.firestore();
+// const db = firebase.firestore();
 
 
 
@@ -27,7 +27,7 @@ window.onload = (() =>{
 // });
 
 //global firebase variable
-db = firebase.database();
+var db = firebase.firestore();
 
 
 // function that sends Data to firebase realtime Database
@@ -35,7 +35,7 @@ var newDate;
 function sendData(name){
     newDate = new Date();
 
-    let ref = db.ref("/paterons/").push({
+    let ref = db.collection("/paterons/").add({
         name,
         date: newDate.toString(),
     }).then(()=>{
