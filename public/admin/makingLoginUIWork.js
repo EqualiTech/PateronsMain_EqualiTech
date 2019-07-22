@@ -56,10 +56,11 @@ function logout(){
 
 //========================================
 
-const acceptableEmails = ["pixman92@gmail.com"];
+// const acceptableEmails = ["pixman92@gmail.com", "christianbear1221@gmail.com"];
 
+const acceptableEmails = ["pixman92@gmail.com", "christianbear1221@gmail.com"];
 
-var isTrue = true;
+var isTrue = true; var falseCount = 0;
 function checkUser(){
   //function that checks if someone is signed in or not
   //useful for rejecting wrong emails that are NOT "admins"
@@ -72,10 +73,20 @@ function checkUser(){
       // if(user.email=="pixman92@gmail.com"){
       //   alert('yup!');
       // }
-      for(var i in acceptableEmails){
+      for(var i=0; i<acceptableEmails.length; i++){
+        console.log(acceptableEmails[i]);
+        
         if(user.email != acceptableEmails[i]){
-          isTrue = false;
+          falseCount++;  
+        }else{
+          isTrue=true;
+          console.log("true!");
         }
+      }
+      if(falseCount>=i){
+        console.log("false");
+        console.log("not found");
+        logout();
       }
       
       makeLogoutButtonAppear();
