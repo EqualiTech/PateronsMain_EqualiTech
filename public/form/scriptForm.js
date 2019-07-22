@@ -1,4 +1,4 @@
-const db2 = firebase.firestore();
+const db = firebase.firestore();
 
 
 
@@ -51,7 +51,7 @@ function makeStr(arr){
 }
 
 function addDataToFirestoreForCompletelyNew(path, data){   
-    db2.collection(path).add(data).
+    db.collection(path).add(data).
     catch((error)=>{
         console.error('error caught', error);
     });   

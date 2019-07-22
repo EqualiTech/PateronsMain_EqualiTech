@@ -1,12 +1,11 @@
 //file that deals with creating firestore profiles of paterons
-// const db2 = firebase.firestore();
+// const db = firebase.firestore();
 
-const settings = {/* your settings... */ timestampsInSnapshots: true};  //docdata.date.toDate();
-db2.settings(settings);
+
 
 
 // function addDataToFirestoreForCompletelyNew(path, data){   
-//     db2.collection(path).add(data).
+//     db.collection(path).add(data).
 //     catch((error)=>{
 //         console.error('error caught', error);
 //     });   
@@ -16,7 +15,7 @@ var dataMe = []; var firestorePaths = [];
 var slashCount = 0;
 async function queryData(path){
     dataMe=[]; firestorePaths=[];
-    await db2.collection(path).get().
+    await db.collection(path).get().
     then(async (snap)=>{
         snap.forEach(async (doc)=>{
             // console.log('data', doc.data);
@@ -37,7 +36,7 @@ async function queryData(path){
 var savedDoc=[];
 function pullDataFromFirestore(path){
     if(isOddOrEven(path)=="odd"){
-        db2.doc(path).get().
+        db.doc(path).get().
         then((doc)=>{
             // console.log('docdata', doc.data());
             if(doc.exists){
@@ -49,7 +48,7 @@ function pullDataFromFirestore(path){
         }); 
     }
     if(isOddOrEven(path)=="even"){
-        db2.collection(path).get().
+        db.collection(path).get().
         then((doc)=>{
             // console.log('docdata', doc.data());
             if(doc.exists){
@@ -108,7 +107,7 @@ function whereFinder(inputMe){    //function used in outputting.js to be used wi
     // input = inputDate.setHours(0,0,0,0);
 
 
-    db2.collection('paterons')
+    db.collection('paterons')
     .where('date', '<', afterDate).where('date', '>', beforeDate)
     // .where('date', '==', originDate)
     .get()

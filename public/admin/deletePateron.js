@@ -12,14 +12,14 @@ async function deleteStuff(path, dateLess, dateMore){
 
     docSaved=[];
 
-    // deleteMe = await db2.collection(path).where('date', '==', date);
+    // deleteMe = await db.collection(path).where('date', '==', date);
 
     // console.log('deleteMe1', deleteMe);
     //  deleteMe.get().then(async (snap)=>{
 
 
     docSavedForDeleting=[]
-    deleteMe = await db2.collection(path).where('date', '>', dateLess).where('date', '<', dateMore);
+    deleteMe = await db.collection(path).where('date', '>', dateLess).where('date', '<', dateMore);
 
 
     // getting();
