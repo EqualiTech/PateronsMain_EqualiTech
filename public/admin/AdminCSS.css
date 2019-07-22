@@ -150,3 +150,8 @@
     margin-bottom: auto;
 
 }
+/* //======================================== */
+
+#logoutId{
+    display: none;
+}

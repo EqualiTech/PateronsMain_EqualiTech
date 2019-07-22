@@ -17,11 +17,11 @@
         
     <script src="configAdmin.js"></script>
     <script>
+        firebase.initializeApp(firebaseConfig);
         var db = firebase.firestore();
         //var db = firebase.firestore();
             // Your web app's Firebase configuration
     // Initialize Firebase
-    //firebase.initializeApp(firebaseConfig);
     </script>
     <script src="makingLoginUIWork.js"></script>
     <!-- Firestores stuff - End -->
@@ -74,13 +74,23 @@
                     }
                       
             });
-            addListenerDelete();
+            //creatingCredential();
+            buttonLogin();  //add listeners to login button
+            checkUser();    //check user auth
+            //addListenerDelete();    //
         });
     </script>
 
 
 </head>
 <body>
+
+    <div id="gridForButton">
+        <button id="loginId" class="w3-btn w3-margin-left w3-green">Login</button>
+        <button id="logoutId" class="w3-btn w3-margin-left w3-green">Logout</button>
+    </div>
+
+
     <div class="centeredGrid">
 
         <div class="w3-card-2 margMe">
