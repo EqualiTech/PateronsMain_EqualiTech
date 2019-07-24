@@ -58,6 +58,7 @@ function logout(){
 
 // const acceptableEmails = ["pixman92@gmail.com", "christianbear1221@gmail.com"];
 
+//NEXT?
 const acceptableEmails = ["pixman92@gmail.com", "christianbear1221@gmail.com"];
 
 var isTrue = true; var falseCount = 0;
@@ -86,7 +87,8 @@ function checkUser(){
       if(falseCount>=i){
         console.log("false");
         console.log("not found");
-        logout();
+        // NEXT? - select Admin only emails
+        // logout();
       }
       
       makeLogoutButtonAppear();
