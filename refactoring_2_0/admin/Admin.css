@@ -1,0 +1,70 @@
+#login{
+    display: none;
+}
+#weekPage{
+    display: none;
+}
+.margMe{
+    margin: 1.3em;
+    left: 0px;
+    padding: 2em;
+    width: 88%;
+    position: abosolute;
+    left: 10px;
+}
+.grid1{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1em;
+    align-items: center;
+    /* margin-top: auto; */
+}
+#today{
+    font-size: 1.3em;
+}
+#dailyNumber{
+    font-size: 1em;
+    margin: auto;
+}
+
+.centeredGrid{
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    /* margin-right: auto; */
+    justify-items: center;
+}
+
+/* //================================================ */
+@media screen and (max-width:400px){
+    body{
+        /* left:0em; */
+        margin: 0em;
+        padding: 0em;
+    }
+    .centeredGrid{
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        /* margin-right: auto; */
+        justify-items: center;
+    }
+    #todayPageHeading{
+        width: auto;
+    }
+    .title{
+        font-size: 1em;
+        padding: .4em;
+    }
+    #dateCentered{
+        width:100%;
+        /* margin-left: 200%; */
+    }
+
+
+}
+
+
+#logoutId{
+    display: none;
+}

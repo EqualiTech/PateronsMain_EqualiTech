@@ -9,3 +9,5 @@ function addDoc(docMe, data){
     //function to push updated data up to firebase
     db.collection(docMe).doc(docMe).set(data, {merge: true});
 }
+
+

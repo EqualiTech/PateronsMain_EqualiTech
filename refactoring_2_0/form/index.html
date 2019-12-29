@@ -44,6 +44,12 @@
            color:#ffffff;
        }
 
+       @media screen and (max-width: 400px) {
+           div{
+               font-size: .8em;
+           }
+       }
+
     </style>
 
 
@@ -60,7 +66,9 @@
         const db = firebase.firestore();
     </script>
     <script src="script.js"></script>
-    <script src="background_functions.js"></script>
+    <script src="form_background_functions.js"></script>
+
+    
 </head>
 <body>
 
@@ -102,8 +110,7 @@
                                 ">For a Class
                                 </option>
                                 <option value="Use a computer
-                                ">Use a Computer
-                                </option>
+                                ">Use a Computer</option>
                                 <option value="Use the printer
                                 ">Use the Printer
                                 </option>
@@ -120,7 +127,7 @@
                         <div class="w3-blue hundred">Contact Info:</div>
                         <div style="margin-top:.3em;"></div>
                         <div class="contact">Phone/Cell:</div>
-                            <textarea id="contactPhone" lass="hundred" id="contactInfo"></textarea>
+                            <textarea id="contactPhone" class="hundred" id="contactInfo"></textarea>
                         <div style="margin-top:.1em;" class="contact">Email</div>
                             <textarea id="contactEmail" class="hundred" id="email"></textarea>
                     </div>

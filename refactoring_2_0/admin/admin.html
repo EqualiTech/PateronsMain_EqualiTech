@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.1 user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin Dashboard</title>
+    
+    <!-- Firestore stuff - Start -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-auth.js"></script>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="Admin.css">
+    <link rel="stylesheet" href="pikaday.css">
+
+    <script src="time_data.js"></script>
+    <script src="admin_background_functions.js"></script>
+    <script src="login.js"></script>
+    <script src="moment.js"></script>
+    <script src="showhide.js"></script>
+    
+
+    <script src="config.js"></script>
+    <script>
+        const db = firebase.firestore();
+    </script>
+
+
+</head>
+<body>
+    <div id="gridForButton">
+        <button id="loginId" class="w3-btn w3-margin-left w3-green">Login</button>
+        <button id="logoutId" class="w3-btn w3-margin-left w3-green">Logout</button>
+    </div>
+
+    <div class="centeredGrid">
+
+        <div class="w3-card-2 margMe">
+    
+            <h2 class="w3-green title">Admin Dashboard</h2>            
+            <div id="login">
+                <input type="text" id="textToCheck" name="password">
+                <button id="checkPassword">Submit</button>
+            </div>
+        
+            <div id="todayPageHeading">
+            <div id="todayPage" class="grid1">
+                    <h1 id="today" class="item">Today Page</h1>
+                    <!-- <div  id='dateDiv'> -->
+                        <!-- </div> -->
+                    <!-- <div></div> -->
+                    <div  id="dailyNumber">
+                        <h1 class="item" id="daily_header">--</h1>
+                    </div>
+                    <input class="item" id='dateCentered' >
+            </div>
+            <!-- <input type="text" id="dateCentered"></input> -->
+                <div id="grid">
+                    <!-- <div class="name">hello</div>
+                    <div class="name">yup</div> -->
+                </div>
+        
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+    <!-- <script src="picker.js"></script> -->
+
+
+</body>
