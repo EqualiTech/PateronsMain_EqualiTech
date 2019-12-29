@@ -5,30 +5,49 @@
     <meta name="viewport" content="width=100, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Getting Data From Firebase</title>
-    <link rel="stylesheet" href="form.css">
+    <!-- <link rel="stylesheet" href="form.css"> -->
     <style>
+
         .grid1{
             display: grid;
             grid-template-rows: 1fr 1fr;
             margin: auto;
             width:50%;
+            font-size: x-large;
         }
 
-
+        .marginBottom{
+            margin-bottom: 1.8em;
+        }
+        .hundred{
+            width: 100%
+        }
+        #userName{
+            width: 100%;
+        }
 
         #submitButton{
             margin: auto;
             width: 50%;
+            margin-bottom: 2.4em;
         }
        .middleStuff{
            margin: auto;
            width: 100%;
        }
+       #contactInfo{
+           height: 2em;
+           font-size: 2em;
+       }
+       .contact{
+           background-color: #279ed9;
+           color:#ffffff;
+       }
 
     </style>
 
 
-    <script src="helperFunctions.js"></script>
+    <!-- <script src="helperFunctions.js"></script> -->
     
 
     
@@ -38,11 +57,9 @@
     <script src="config.js"></script>
     <script>
         // Initialize Firebase
-       
-        firebase.initializeApp(config);
         const db = firebase.firestore();
     </script>
-    <script src="scriptForm.js"></script>
+    <!-- <script src="scriptForm.js"></script> -->
 </head>
 <body>
 
@@ -57,14 +74,58 @@
 
         <div id="changeMeWhenSaved">
             <div class="grid1">
-                <div class="middleStuff">
-                    <div class="w3-blue userName">
-                        Username:
+                    <div class="marginBottom">
+                        <div class="w3-blue userName">
+                            Username:
+                        </div>
+                        <textarea id="userName" rows="1"></textarea>
                     </div>
-                    <textarea id="userName" rows="1"></textarea>
-                    <h1>hello</h1>
+                    <div class="marginBottom">
+                        <div class="w3-blue userType">User Type</div>
+                        <select class="hundred">
+                            <option value="Student">Student</option>
+                            <option value="Visitor">Vistor</option>
+                        </select>
+                    </div>
+                    <div class="marginBottom">
+                        <div class="w3-blue">
+                            Reason for Visit
+                        </div>
+                        <div>
+                            <select class="hundred">
+                                <option value="Appointment">Appointment</option>
+                                <option value="Study time
+                                ">Study Time
+                                </option>
+                                <option value="For a class
+                                ">For a Class
+                                </option>
+                                <option value="Use a computer
+                                ">Use a Computer
+                                </option>
+                                <option value="Use the printer
+                                ">Use the Printer
+                                </option>
+                                <option value="Asking for help
+                                ">Asking for Help
+                                </option>
+                                <option value="other reasons
+                                ">Other Reasons...</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="marginBottom">
+
+                        <div class="w3-blue hundred">Contact Info:</div>
+                        <div style="margin-top:.3em;"></div>
+                        <div class="contact">Phone/Cell:</div>
+                            <textarea class="hundred" id="contactInfo"></textarea>
+                        <div style="margin-top:.1em;" class="contact">Email</div>
+                            <textarea class="hundred" id="email"></textarea>
+                    </div>
+                    
+                    <button id="submitButton">Submit</button>
                 </div>
-                <button id="submitButton">Submit</button>
             </div>
 
 
