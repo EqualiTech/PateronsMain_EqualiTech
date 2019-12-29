@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=100, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Getting Data From Firebase</title>
+    <title>Equalitech Login Page</title>
     <!-- <link rel="stylesheet" href="form.css"> -->
     <style>
 
@@ -59,7 +59,8 @@
         // Initialize Firebase
         const db = firebase.firestore();
     </script>
-    <!-- <script src="scriptForm.js"></script> -->
+    <script src="script.js"></script>
+    <script src="background_functions.js"></script>
 </head>
 <body>
 
@@ -82,7 +83,7 @@
                     </div>
                     <div class="marginBottom">
                         <div class="w3-blue userType">User Type</div>
-                        <select class="hundred">
+                        <select id="userType" class="hundred">
                             <option value="Student">Student</option>
                             <option value="Visitor">Vistor</option>
                         </select>
@@ -92,7 +93,7 @@
                             Reason for Visit
                         </div>
                         <div>
-                            <select class="hundred">
+                            <select id="reason" class="hundred">
                                 <option value="Appointment">Appointment</option>
                                 <option value="Study time
                                 ">Study Time
@@ -119,9 +120,9 @@
                         <div class="w3-blue hundred">Contact Info:</div>
                         <div style="margin-top:.3em;"></div>
                         <div class="contact">Phone/Cell:</div>
-                            <textarea class="hundred" id="contactInfo"></textarea>
+                            <textarea id="contactPhone" lass="hundred" id="contactInfo"></textarea>
                         <div style="margin-top:.1em;" class="contact">Email</div>
-                            <textarea class="hundred" id="email"></textarea>
+                            <textarea id="contactEmail" class="hundred" id="email"></textarea>
                     </div>
                     
                     <button id="submitButton">Submit</button>
