@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+comm<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -43,6 +43,12 @@
            background-color: #279ed9;
            color:#ffffff;
        }
+
+       .grid2{
+           display: grid;
+           grid-template-columns: .5fr 1fr 1fr 1.5fr;
+       }
+
 
        @media screen and (max-width: 400px) {
            div{
@@ -104,32 +110,52 @@
                             <select id="reason" class="hundred">
                                 <option value="Appointment">Appointment</option>
                                 <option value="Study time
-                                ">Study Time
-                                </option>
+                                ">Study Time</option>
                                 <option value="For a class
-                                ">For a Class
-                                </option>
+                                ">For a Class</option>
                                 <option value="Use a computer
                                 ">Use a Computer</option>
                                 <option value="Use the printer
-                                ">Use the Printer
-                                </option>
+                                ">Use the Printer</option>
                                 <option value="Asking for help
-                                ">Asking for Help
-                                </option>
-                                <option value="other reasons
-                                ">Other Reasons...</option>
+                                ">Asking for Help</option>
+                                <option value="other reasons">Other Reasons...</option>
                             </select>
+                            <div id="hiddenOther">
+                                <div class="w3-blue hundred">Other??</div>
+                                <textarea class="hundred"  cols="30" rows="1"></textarea>
+
+                            </div>
+
                         </div>
                     </div>
+                    <div class="marginBottom">
+                        <div class="w3-blue">Contact me?</div>
+                        <div class="grid2">
+                            <div></div>
+                            <div id="yes">
+                                Yes <input id="yesCheckBox" type="checkbox">
+                            </div>
+                            <div></div>
+                            <div id="no">
+                                No <input id="noCheckBox" type="checkbox">
+                            </div>
+                            <div></div>
+                        </div>
+                    </div>
+                    
+
                     <div class="marginBottom">
 
                         <div class="w3-blue hundred">Contact Info:</div>
                         <div style="margin-top:.3em;"></div>
                         <div class="contact">Phone/Cell:</div>
-                            <textarea id="contactPhone" class="hundred" id="contactInfo"></textarea>
+                            <textarea id="contactPhone" class="hundred" rows="1" id="contactInfo"></textarea>
                         <div style="margin-top:.1em;" class="contact">Email</div>
-                            <textarea id="contactEmail" class="hundred" id="email"></textarea>
+                            <textarea id="contactEmail" class="hundred" rows="1" id="email"></textarea>
+                    </div>
+                    <div>
+                        
                     </div>
                     
                     <button id="submitButton">Submit</button>
