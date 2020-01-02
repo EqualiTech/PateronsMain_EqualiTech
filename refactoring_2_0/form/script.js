@@ -41,16 +41,26 @@ window.onload = ()=>{
     document.getElementById('yes').addEventListener('click', ()=>{
         console.log('clicked', );
         if(clickedYes){
-            document.getElementsByTagName('yesCheckBox').checked = true;
+            document.getElementById('yesCheckBox').checked = true;
             clickedYes=!clickedYes;
         }else{
-            document.getElementsByTagName('yesCheckBox').checked = false;
+            document.getElementById('yesCheckBox').checked = false;
             clickedYes=!clickedYes;
         }
     });
 
 
     //clicking - NO
-    
+    var clickedNo = false;
+    document.getElementById('no').addEventListener('click', ()=>{
+        console.log('clicked', );
+        if(clickedNo){
+            document.getElementById('noCheckBox').checked = true;
+            clickedNo=!clickedNo;
+        }else{
+            document.getElementById('noCheckBox').checked = false;
+            clickedNo=!clickedNo;
+        }
+    });
 
 }
