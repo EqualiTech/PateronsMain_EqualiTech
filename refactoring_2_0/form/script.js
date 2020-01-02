@@ -1,9 +1,9 @@
 // saved to "paterons3" - in Firebase database
 
-function saveWithUpdatedFields(name, userType, reason, phone, email){
+function saveWithUpdatedFields(name, userType, reason, contactMe, phone, email){
 
     var dateMe = new Date();
-    adding({name, userType, reason, phone, email, dateMe});
+    adding({name, userType, reason, contactMe, phone, email, dateMe});
 
 }
 
@@ -36,30 +36,54 @@ window.onload = ()=>{
 
     }); 
 
-    var clickedYes = false;
+    var clickedYes = true;
     //clicking - YES
-    document.getElementById('yes').addEventListener('click', ()=>{
+    document.getElementById('yes').addEventListener('click', (e)=>{
+
+        e.preventDefault();
+
+        clickedYes=!clickedYes;
+
         console.log('clicked', );
         if(clickedYes){
+            if(document.getElementById('noCheckBox').checked ==true)document.getElementById('noCheckBox').checked =false;
+
             document.getElementById('yesCheckBox').checked = true;
-            clickedYes=!clickedYes;
+            // document.getElementById('noCheckBox').checked = false;
+            
+            
         }else{
             document.getElementById('yesCheckBox').checked = false;
+            // document.getElementById('noCheckBox').checked = false;
             clickedYes=!clickedYes;
         }
     });
 
 
     //clicking - NO
-    var clickedNo = false;
-    document.getElementById('no').addEventListener('click', ()=>{
+    var clickedNo = true;
+    document.getElementById('no').addEventListener('click', (e)=>{
+
+        e.preventDefault();
+        
+        clickedNo=!clickedNo;
+
         console.log('clicked', );
         if(clickedNo){
+            if(document.getElementById('yesCheckBox').checked ==true)document.getElementById('yesCheckBox').checked =false;
+
             document.getElementById('noCheckBox').checked = true;
-            clickedNo=!clickedNo;
+            
+            // document.getElementById('yesCheckBox').checked = false;
+
+            
         }else{
             document.getElementById('noCheckBox').checked = false;
-            clickedNo=!clickedNo;
+            // document.getElementById('yesCheckBox').checked = false;
+            
+            clickedNo = !clickedNo;
+            
+            // clickedNo=!clickedNo;
         }
     });
 
