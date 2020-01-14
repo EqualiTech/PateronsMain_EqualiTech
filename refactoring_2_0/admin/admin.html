@@ -14,18 +14,59 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="Admin.css">
     <link rel="stylesheet" href="pikaday.css">
-
-    <script src="time_data.js"></script>
+    
     <script src="admin_background_functions.js"></script>
     <script src="login.js"></script>
     <script src="moment.js"></script>
     <script src="showhide.js"></script>
+    <script src="scriptAdmin.js"></script>
+    <script src="time_data.js"></script>
+    <script src="pickaday.js"></script>
     
+    
+    <script>
+
+        window.onload = (()=>{
+            //alert('yup');
+            /* var input = document.getElementById("newDate");
+            input.addEventListener("keyup", function(event) {
+                // Cancel the default action, if needed
+                event.preventDefault();
+                // Number 13 is the "Enter" key on the keyboard
+                if (event.keyCode === 13) {
+                  // Trigger the button element with a click
+                  changeTodayAndRunWithIt();
+                  document.getElementById("newDate").value = "";
+                }
+              }); */
+              document.getElementById('dateCentered').addEventListener("keyup", function(event) {
+            // Number 13 is the "Enter" key on the keyboard
+                if (event.keyCode === 13) {
+                // Cancel the default action, if needed
+                event.preventDefault();
+                // Trigger the button element with a click
+                //   document.getElementById("myBtn").click();
+                changeTodayAndRunWithIt();
+                }
+                  
+            });
+            //creatingCredential();
+            buttonLogin();  //add listeners to login button
+            checkUser();    //check user auth
+            // addListenerDelete();    //delete button listeners
+            // document.getElementById('newDate').addEventListener('click', ()=>{
+            // document.getElementById('newDate').blur();
+        });
+    </script>
+
+
+
 
     <script src="config.js"></script>
     <script>
+        firebase.initializeApp(firebaseConfig);
         const db = firebase.firestore();
-    </script>
+        </script>
 
 
 </head>
@@ -36,7 +77,7 @@
     </div>
 
     <div class="centeredGrid">
-
+        
         <div class="w3-card-2 margMe">
     
             <h2 class="w3-green title">Admin Dashboard</h2>            
@@ -50,7 +91,7 @@
                     <h1 id="today" class="item">Today Page</h1>
                     <!-- <div  id='dateDiv'> -->
                         <!-- </div> -->
-                    <!-- <div></div> -->
+                        <!-- <div></div> -->
                     <div  id="dailyNumber">
                         <h1 class="item" id="daily_header">--</h1>
                     </div>
@@ -64,9 +105,10 @@
         
             </div>
 
-            <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+            <!-- <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script> -->
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
     <!-- <script src="picker.js"></script> -->
 
+    <script src="pickerFrontEnd.js"></script>
 
 </body>
