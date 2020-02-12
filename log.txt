@@ -7,3 +7,5 @@
 2020, 02, 12 - 15:20:48 --- NEXT? - pull data from firestore and make it look nice
 
 2020, 02, 12 - 15:26:52 --- working with Firebase Console, pretty sure I have more recent work done on my desktop...bummer. 
+
+2020, 02, 12 - 15:28:35 --- 
