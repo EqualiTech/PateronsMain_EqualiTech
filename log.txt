@@ -19,3 +19,14 @@
 2020, 02, 11 - 19:43:00 --- timestamp code, worked on 1 case
 
 2020, 02, 11 - 19:47:54 --- trying timestamp on 'any case'
+2020, 02, 12 - 15:16:27 --- starting back, trying to get ADMIN script working - with pull down options. Maybe pateron 'profiles' ??
+
+2020, 02, 12 - 15:19:12 --- trying to get barings straight...what files in OLD are really OLD?
+
+2020, 02, 12 - 15:19:59 --- new-age (branch) --- seems to be the latest version. Run with that(?)
+
+2020, 02, 12 - 15:20:48 --- NEXT? - pull data from firestore and make it look nice
+
+2020, 02, 12 - 15:26:52 --- working with Firebase Console, pretty sure I have more recent work done on my desktop...bummer. 
+
+2020, 02, 12 - 15:28:35 --- 

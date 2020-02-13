@@ -40,7 +40,10 @@ function changeTodayAndRunWithIt(){
         console.log('momentDate', moment(date));
         // amISameDate(moment(date));
 
-        whereFinder(moment(date));
+        // whereFinder(moment(date));
+        // line of code to 'where' Date data
+        
+
         document.getElementById('grid').innerHTML = "";
         populatePaterons();
             

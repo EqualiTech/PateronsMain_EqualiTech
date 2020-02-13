@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.1 user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Admin Dashboard</title>
+
+    <link rel="stylesheet" href="pure-min.css">
+    <link rel="stylesheet" href="w3t.css">
+
     
     <link rel="stylesheet" href="pure-min.css">
 
     <!-- Firestore stuff - Start -->
     <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-firestore.js"></script>
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="Admin.css">
@@ -24,11 +28,21 @@
     <script src="scriptAdmin.js"></script>
     <script src="time_data.js"></script>
     <script src="pickaday.js"></script>
+    <script src="firestoreHelpers.js"></script>
     
     
     <script>
 
+
+
+
         window.onload = (()=>{
+            //cookie stuff, does it help? - yup
+            document.cookie = 'same-site-cookie=foo; SameSite=Lax';
+            document.cookie = 'cross-site-cookie=bar; SameSite=None; Secure';
+
+
+
             //alert('yup');
             /* var input = document.getElementById("newDate");
             input.addEventListener("keyup", function(event) {
