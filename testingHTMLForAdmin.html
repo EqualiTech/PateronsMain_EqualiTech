@@ -4,5 +4,21 @@
     phone
     reason
     userType
-    
+
  -->
+
+var HTMLStringForAdmin = "";
+function makeHTML(){
+}
+HTMLStringForAdmin =  ["<div class='pure-g'><div class='pure-u-1-5'>", basedOnDate[0].name, "</div><div class='pure-u-1-5'><div class='centerMe'>",basedOnDate[0].email, "</div></div><div class='pure-u-1-5'><div class='centerMe'>",basedOnDate[0].phone, "</div></div><div class='pure-u-1-5'><div class='centerMe'>",basedOnDate[0].reason, "</div></div><div class='pure-u-1-5 centerMe'><div class='centerMe'>",basedOnDate[0].userType, "</div></div></div>"].join("");   
+
+document.getElementById('grid').innerHTML = HTMLStringForAdmin;
+ basedOnDate
+
+ <div class='pure-g'>
+    <div class="pure-u-1-5">basedOnDate[0].name</div>
+    <div class="pure-u-1-5">basedOnDate[0].email</div>
+    <div class="pure-u-1-5">basedOnDate[0].phone</div>
+    <div class="pure-u-1-5">basedOnDate[0].reason</div>
+    <div class="pure-u-1-5">basedOnDate[0].userType</div>
+</div>
