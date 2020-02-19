@@ -8,4 +8,24 @@
 
 2020, 02, 12 - 15:26:52 --- working with Firebase Console, pretty sure I have more recent work done on my desktop...bummer. 
 
-2020, 02, 12 - 15:28:35 --- 
+2020, 02, 12 - 15:33:39 --- Series for func(s) to get Admin.html up and working?
+
+2020, 02, 12 - 15:46:50 --- Sending in DATE obj, works. But have yet to pull out 'profile objs'
+
+2020, 02, 12 - 15:51:37 --- Trying to get HTML live server to allow me to Login...
+
+2020, 02, 12 - 16:05:09 --- request.auth.uid != null;
+
+2020, 02, 12 - 16:05:24 --- ^ allowing Firebase Rules, to be insecure
+
+2020, 02, 12 - 16:22:10 --- Getting 'dateMe' - working. Had to change where() query from 'date' -> 'dateMe'.
+
+2020, 02, 12 - 16:23:56 --- Good work today. Got the Login (kinda) working. Got the 'pull by date' mostly working.
+
+2020, 02, 12 - 16:24:19 --- NEXT? - organize pulled data, into something nice (HTML)
+
+2020, 02, 18 - 19:33:45 --- =========================================
+
+2020, 02, 18 - 20:49:54 --- Hoping dates compare, working???
+
+2020, 02, 18 - 20:53:53 --- Date Range (?) - working(?)
