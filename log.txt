@@ -45,3 +45,5 @@
 2020, 02, 19 - 15:38:12 --- NEXT? - sorting returned Paterons - based on catergory
 
 2020, 02, 19 - 15:43:47 --- The JavaScript is well defined. NEXT? - get the scripting to plug into the GUI
+
+2020, 02, 19 - 15:49:57 --- Form GUI - plugged in, but the Flow is...off
