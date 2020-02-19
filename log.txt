@@ -39,3 +39,9 @@
 2020, 02, 19 - 14:40:43 --- Setting up for HTML for Admin.html page - working? nope
 
 2020, 02, 19 - 14:42:08 --- variable for returned 'withinDates' -- basedOnDate
+
+2020, 02, 19 - 15:37:46 --- Working on HTML Stuff!
+
+2020, 02, 19 - 15:38:12 --- NEXT? - sorting returned Paterons - based on catergory
+
+2020, 02, 19 - 15:43:47 --- The JavaScript is well defined. NEXT? - get the scripting to plug into the GUI

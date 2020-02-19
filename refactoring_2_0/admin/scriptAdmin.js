@@ -32,3 +32,17 @@ function withinDates(path, inputMe){
         console.log("Error getting documents: ", error);
     });
 }
+
+
+//=====================================================
+var HTMLStringForAdmin = "";
+function makeHTML(){
+    //basic foundation for HTMLing the Admin page
+
+
+    HTMLStringForAdmin =  ["<div class='pure-g'><div class='pure-u-1-5'>", basedOnDate[0].name, "</div><div class='pure-u-1-5'><div class='centerMe'>",basedOnDate[0].email, "</div></div><div class='pure-u-1-5'><div class='centerMe'>",basedOnDate[0].phone, "</div></div><div class='pure-u-1-5'><div class='centerMe'>",basedOnDate[0].reason, "</div></div><div class='pure-u-1-5 centerMe'><div class='centerMe'>",basedOnDate[0].userType, "</div></div></div>"].join("");   
+
+
+
+    document.getElementById('grid').innerHTML = HTMLStringForAdmin;
+}
