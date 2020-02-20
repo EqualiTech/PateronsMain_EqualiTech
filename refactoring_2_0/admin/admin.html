@@ -58,11 +58,13 @@
               document.getElementById('dateCentered').addEventListener("keyup", function(event) {
             // Number 13 is the "Enter" key on the keyboard
                 if (event.keyCode === 13) {
-                // Cancel the default action, if needed
-                event.preventDefault();
-                // Trigger the button element with a click
-                //   document.getElementById("myBtn").click();
-                changeTodayAndRunWithIt();
+                    // Cancel the default action, if needed
+                    event.preventDefault();
+                    // Trigger the button element with a click
+                    //   document.getElementById("myBtn").click();
+    
+                    // changeTodayAndRunWithIt();
+                    makeCalendar();
                 }
                   
             });
@@ -111,7 +113,7 @@
                     <div  id="dailyNumber">
                         <h1 class="item" id="daily_header">--</h1>
                     </div>
-                    <input class="item" id='dateCentered' >
+                    <input class="item form-control" id='dateCentered' >
             </div>
             <!-- <input type="text" id="dateCentered"></input> -->
                 <div id="grid">
