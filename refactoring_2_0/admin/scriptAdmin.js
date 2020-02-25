@@ -1,26 +1,97 @@
 //HTML functions for ADMIN
-function makeHTML(){
+// function makeHTML(){
     
+// }
+
+
+window.onload = ()=>{
+    makeCalendar();
 }
 
-function pullUsersBasedOnTime(date){
-    //function that makes dates into seconds
 
-    var toSecDate = new Date(date);
-    var timeBefore = toSecDate.getTime()/1000;
+var basedOnDate = [];
 
-    timeBefore-=1;
-    console.log('timeBefore', timeBefore);
+function withinDates(path, inputMe){
 
-    var toSecDate2 = new Date(date);
-    timeAfter = (toSecDate2.getTime()/1000)+1;
-    console.log('timeAfter', timeAfter);
+    // date = new Date(dateMe); 
+    originDate = new Date(inputMe);
+    originDate = new Date(originDate);
+    afterDate = new Date(originDate);
+    beforeDate = new Date(originDate);
 
-    tmp = db.collection('paterons3');
+    afterDate = afterDate.setHours(23, 59, 59, 0);
+    beforeDate = beforeDate.setHours(0, 0, 0, 0);
 
-    tmp2 = tmp.where('dateMe', '>', timeBefore ).where('dateMe', '<', timeAfter);
-    tmp2.get().then(async (snap)=>snap.forEach(async (doc)=>{
-        console.log(doc);
-        whereIds.push(doc.id);
-    }));
+    afterDate = new Date(afterDate);
+    beforeDate = new Date(beforeDate);
+
+
+    db.collection(path).where("dateMe", "<", afterDate).where("dateMe", ">", beforeDate).get()
+    .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data());
+            basedOnDate.push(doc.data());
+        });
+    })
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
+}
+
+
+//=====================================================
+var HTMLStringForAdmin = "";
+function makeHTML(i){
+    //basic foundation for HTMLing the Admin page
+    //pushes all HTML to an Array[], then joins them and outputs to innerHTML
+
+    var tmpArr = [];
+    tmpArr.push("<div class='pure-g'>");
+    tmpArr.push("<div class='pure-u-1-5'><div>");
+    tmpArr.push(basedOnDate[i].name);
+    tmpArr.push("</div></div>");
+    tmpArr.push("<div class='pure-u-1-5'><div class='centerMe'>");
+    tmpArr.push(basedOnDate[i].email);
+    tmpArr.push("</div></div>");
+    tmpArr.push("<div class='pure-u-1-5'><div class='centerMe'>");
+    tmpArr.push(basedOnDate[i].phone);
+    tmpArr.push("</div></div>");
+    tmpArr.push("<div class='pure-u-1-5'><div class='centerMe'>");
+    tmpArr.push(basedOnDate[i].reason);
+    tmpArr.push("</div></div>");
+    tmpArr.push("<div class='pure-u-1-5 centerMe'><div class='centerMe'>");
+    tmpArr.push(basedOnDate[i].userType);
+    tmpArr.push("</div></div>");
+    tmpArr.push("</div>");
+
+    HTMLStringForAdmin += tmpArr.join(""); 
+    
+
+    document.getElementById('grid').innerHTML = HTMLStringForAdmin;
+}
+
+
+//=====================================================
+function pullDateFromPopupCalendar(){
+    //a sort of combo function
+
+    //takes in value of Calendar (popup)
+    //finds Range based on Date
+    //prints out an Arr[] Str of HTML
+
+
+    var dateValued = document.getElementById("dateCentered").value;
+
+    try{
+        withinDates("paterons3", dateValued);
+        wait(800).then(()=>{
+            for(var i=0; i<basedOnDate.length; i++){
+                makeHTML(i);
+            }
+        });
+    }catch{
+        console.log('error');
+    }
+
 }

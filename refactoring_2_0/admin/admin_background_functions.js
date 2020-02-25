@@ -25,8 +25,19 @@ async function whereMe(root, first, second){
 
 var convertedDate;
 function getDateFromSecs(dateStuff){
+    //pulls seconds from Firebase cloud fire date time stamp (in seconds)
+    //pushes out corresponding Date (in string)
     convertedDate = new Date(null);
     convertedDate.setSeconds(dateStuff);
     console.log('Corresponding Date', convertedDate);
     
+}
+
+//========================================
+function wait(timout){
+    return new Promise(resolve=>setTimeout(resolve, timout));
+}
+
+function makeStr(arr){
+    return arr.join("")
 }
