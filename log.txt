@@ -49,3 +49,17 @@
 2020, 02, 19 - 15:49:57 --- Form GUI - plugged in, but the Flow is...off
 
 2020, 02, 19 - 22:23:58 --- document.getElementById("dateCentered").value  -- value to pull from 'Popup Calendar'
+
+2020, 02, 19 - 22:47:39 --- Lots working! pullDateFromPopupCalendar() - a super combo function
+
+2020, 02, 21 - 15:40:01 --- ==============================================
+
+2020, 02, 21 - 15:40:38 --- Font size when iPhone sized...not working
+
+2020, 02, 21 - 15:43:14 --- Body width and Font-size CSS - for iPhone screen - working!
+
+2020, 02, 21 - 15:58:22 --- Ready for update to Firebase(??)
+
+2020, 02, 21 - 16:20:19 --- Working? - pushing and pulling data with 'callback()' (!) function
+
+2020, 02, 25 - 21:40:49 --- ======================================

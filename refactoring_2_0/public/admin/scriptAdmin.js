@@ -11,7 +11,9 @@ window.onload = ()=>{
 
 var basedOnDate = [];
 
-function withinDates(path, inputMe){
+function withinDates(path, inputMe, callback){
+
+    basedOnDate = [];       //trying to resest HTML'd Paterons
 
     // date = new Date(dateMe); 
     originDate = new Date(inputMe);
@@ -33,42 +35,54 @@ function withinDates(path, inputMe){
             console.log(doc.id, " => ", doc.data());
             basedOnDate.push(doc.data());
         });
+        callback();
     })
     .catch(function(error) {
         console.log("Error getting documents: ", error);
     });
 }
 
+//=====================================================
+
+// function {
+
+// }
+
 
 //=====================================================
 var HTMLStringForAdmin = "";
+var tmpArr = [];
 function makeHTML(i){
     //basic foundation for HTMLing the Admin page
     //pushes all HTML to an Array[], then joins them and outputs to innerHTML
 
-    var tmpArr = [];
-    tmpArr.push("<div class='pure-g'>");
-    tmpArr.push("<div class='pure-u-1-5'><div>");
+    // tmpArr.push("<div class='gridThree'>");
+    tmpArr.push("<div class='container margTop'>");
+    tmpArr.push("<div class='gridAdmin'>")
+    tmpArr.push("<div class='spacing'>");
     tmpArr.push(basedOnDate[i].name);
-    tmpArr.push("</div></div>");
-    tmpArr.push("<div class='pure-u-1-5'><div class='centerMe'>");
+    tmpArr.push("</div>");
+    tmpArr.push("<div class='centerMe spacing'>");
     tmpArr.push(basedOnDate[i].email);
-    tmpArr.push("</div></div>");
-    tmpArr.push("<div class='pure-u-1-5'><div class='centerMe'>");
+    tmpArr.push("</div>");
+    tmpArr.push("<div class='centerMe spacing'>");
     tmpArr.push(basedOnDate[i].phone);
-    tmpArr.push("</div></div>");
-    tmpArr.push("<div class='pure-u-1-5'><div class='centerMe'>");
+    tmpArr.push("</div>");
+    tmpArr.push("<div class='centerMe spacing'>");
     tmpArr.push(basedOnDate[i].reason);
-    tmpArr.push("</div></div>");
-    tmpArr.push("<div class='pure-u-1-5 centerMe'><div class='centerMe'>");
+    tmpArr.push("</div>");
+    tmpArr.push("<div class='centerMe spacing'>");
     tmpArr.push(basedOnDate[i].userType);
-    tmpArr.push("</div></div>");
+    tmpArr.push("</div>");
+    tmpArr.push("</div>");
     tmpArr.push("</div>");
 
-    HTMLStringForAdmin += tmpArr.join(""); 
+    HTMLStringForAdmin = tmpArr.join(""); 
     
 
-    document.getElementById('grid').innerHTML = HTMLStringForAdmin;
+    document.getElementById('grid').innerHTML += HTMLStringForAdmin;
+    HTMLStringForAdmin = "";
+    tmpArr=[];
 }
 
 
@@ -80,16 +94,20 @@ function pullDateFromPopupCalendar(){
     //finds Range based on Date
     //prints out an Arr[] Str of HTML
 
+    basedOnDate = [];
 
     var dateValued = document.getElementById("dateCentered").value;
 
     try{
-        withinDates("paterons3", dateValued);
-        wait(800).then(()=>{
-            for(var i=0; i<basedOnDate.length; i++){
-                makeHTML(i);
-            }
+        // basedOnDate = [];
+        withinDates("paterons3", dateValued, ()=>{
+            wait(800).then(()=>{
+                for(var i=0; i<basedOnDate.length; i++){
+                    makeHTML(i);
+                }
+            });
         });
+
     }catch{
         console.log('error');
     }

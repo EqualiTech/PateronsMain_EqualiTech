@@ -38,7 +38,24 @@
 .centerMe{
     /* justify-items: center;
     align-items: center; */
-    text-align: center;
+    text-align: left;
+}
+/* ==================================== */
+.spacing{
+    height:1.8em;
+}
+.gridAdmin{
+    display: grid;
+    grid-template-rows: 1fr;
+}
+
+.gridThree{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.margTop{
+    margin-top: 1.2em;
 }
 
 /* //================================================ */
@@ -47,13 +64,16 @@
         /* left:0em; */
         margin: 0em;
         padding: 0em;
+        font-size: .6em;
     }
+
     .centeredGrid{
         display: grid;
         grid-template-columns: 1fr;
         align-items: center;
         /* margin-right: auto; */
         justify-items: center;
+        width:85%;
     }
     #todayPageHeading{
         width: auto;
