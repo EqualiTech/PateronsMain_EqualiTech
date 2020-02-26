@@ -43,21 +43,15 @@
             document.cookie = 'same-site-cookie=foo; SameSite=Lax';
             document.cookie = 'cross-site-cookie=bar; SameSite=None; Secure';
 
+            document.getElementById('leftNav').addEventListener('click', ()=>{
+                
+                removeAll('leftNav');
+            });
+            document.getElementById('rightNav').addEventListener('click', ()=>{
+                removeAll('rightNav');
+            });
 
-
-            //alert('yup');
-            /* var input = document.getElementById("newDate");
-            input.addEventListener("keyup", function(event) {
-                // Cancel the default action, if needed
-                event.preventDefault();
-                // Number 13 is the "Enter" key on the keyboard
-                if (event.keyCode === 13) {
-                  // Trigger the button element with a click
-                  changeTodayAndRunWithIt();
-                  document.getElementById("newDate").value = "";
-                }
-              }); */
-              document.getElementById('dateCentered').addEventListener("keyup", function(event) {
+            document.getElementById('dateCentered').addEventListener("keyup", function(event) {
             // Number 13 is the "Enter" key on the keyboard
                 if (event.keyCode === 13) {
                     // Cancel the default action, if needed
@@ -79,16 +73,13 @@
             // document.getElementById('newDate').addEventListener('click', ()=>{
             // document.getElementById('newDate').blur();
         });
+
+
     </script>
 
 
 
 
-    <script src="config.js"></script>
-    <script>
-        //firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
-    </script>
 
 
 </head>
@@ -98,6 +89,8 @@
         <button id="logoutId" class="w3-btn w3-margin-left w3-green">Logout</button>
     </div>
 
+
+    
     <div class="centeredGrid">
         
         <div class="w3-card-2 margMe">
@@ -107,7 +100,7 @@
                 <input type="text" id="textToCheck" name="password">
                 <button id="checkPassword">Submit</button>
             </div>
-        
+            
             <div id="todayPageHeading">
             <div id="todayPage" class="grid1">
                     <h1 id="today" class="item">Today Page</h1>
@@ -118,7 +111,7 @@
                         <h1 class="item" id="daily_header">--</h1>
                     </div>
                     <input class="item form-control" id='dateCentered' >
-            </div>
+                </div>
             <!-- <input type="text" id="dateCentered"></input> -->
                 <div id="grid" class="gridThree">
                     <!-- <div class="name">hello</div>
@@ -126,11 +119,31 @@
                 </div>
         
             </div>
+        </div>
+            
+            <div class="navBar">
+                <div class="pure-g">
+                    <div id="leftNav" class="w3-border pure-u-1-2 w3-container w3-green">
+                        <p class="padMeRight">Daily</p cal>
+                    </div>
+                    <div id="rightNav" class="w3-border pure-u-1-2 w3-container">
+                        <p class="padMeLeft">Email<p>
+                    </div>
 
+                </div>
+
+            </div>
+
+            
             <!-- <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script> -->
             <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
-    <!-- <script src="picker.js"></script> -->
-
-    <script src="pickerFrontEnd.js"></script>
-
-</body>
+            <!-- <script src="picker.js"></script> -->
+            
+            <script src="config.js"></script>
+        <script>
+                firebase.initializeApp(firebaseConfig);
+                const db = firebase.firestore();
+            </script>
+            <script src="pickerFrontEnd.js"></script>
+            
+        </body>

@@ -6,6 +6,9 @@
 
 window.onload = ()=>{
     makeCalendar();
+
+  
+
 }
 
 
@@ -35,6 +38,10 @@ function withinDates(path, inputMe, callback){
             console.log(doc.id, " => ", doc.data());
             basedOnDate.push(doc.data());
         });
+        // if(basedOnDate.length==0){
+        //     console.log('true');
+        //     document.getElementById("daily_header").innerHTML  = "0";
+        // }
         callback();
     })
     .catch(function(error) {
@@ -101,10 +108,19 @@ function pullDateFromPopupCalendar(){
     try{
         // basedOnDate = [];
         withinDates("paterons3", dateValued, ()=>{
-            wait(800).then(()=>{
-                for(var i=0; i<basedOnDate.length; i++){
-                    makeHTML(i);
+            wait(900).then(()=>{
+                if(basedOnDate.length==0){
+                    document.getElementById("daily_header").innerHTML  = "0";
+                }else{
+                    document.getElementById("daily_header").innerHTML = basedOnDate.length;
                 }
+
+                });
+            wait(800).then(()=>{
+                    for(var i=0; i<basedOnDate.length; i++){
+                        makeHTML(i);
+                    }
+                
             });
         });
 
@@ -112,4 +128,14 @@ function pullDateFromPopupCalendar(){
         console.log('error');
     }
 
+}
+
+
+//=====================================================
+//function to make NavBar nice
+function removeAll(elem){
+    document.getElementById('leftNav').classList.remove("w3-green");
+    document.getElementById('rightNav').classList.remove("w3-green");
+
+    document.getElementById(elem).classList.add('w3-green');
 }

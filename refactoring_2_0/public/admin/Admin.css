@@ -94,3 +94,30 @@
 #logoutId{
     display: none;
 }
+
+/* //=============================================== */
+.navBar{
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    /* padding: 14px 16px; */
+    background: grey;
+    width: 80%;   
+    overflow: hidden;
+    /* background-color: #333; */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.padMeLeft{
+    padding-left: 4em;
+ }
+.padMeRight{
+    padding-right: 4em;
+ }
+
+ .borderMe{
+    border: grey 1px;
+ }
+

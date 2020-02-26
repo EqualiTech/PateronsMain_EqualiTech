@@ -84,3 +84,6 @@
 2020, 02, 21 - 16:20:19 --- Working? - pushing and pulling data with 'callback()' (!) function
 
 2020, 02, 25 - 21:40:49 --- ======================================
+
+
+2020, 02, 25 - 22:03:21 --- Number of Returned Paterons - working!
