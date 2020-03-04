@@ -44,11 +44,14 @@
             document.cookie = 'cross-site-cookie=bar; SameSite=None; Secure';
 
             document.getElementById('leftNav').addEventListener('click', ()=>{
-                
                 removeAll('leftNav');
+                hide();
+                show('todayPageHeading');
             });
             document.getElementById('rightNav').addEventListener('click', ()=>{
                 removeAll('rightNav');
+                hide();
+                show('emailSearchPage')
             });
 
             document.getElementById('dateCentered').addEventListener("keyup", function(event) {
@@ -119,6 +122,26 @@
                 </div>
         
             </div>
+
+            <!-- ================================ -->
+
+            <div id="emailSearchPage">
+                <div class="pure-g margMe2">
+                    <div class="pure-u-2-4">
+                        <input class="item" id="emailSearch">
+                    </div>
+                    <div class="pure-u-1-4"></div>
+
+                    <div class="pure-u-1-4">
+                        <button>Search</button>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
         </div>
             
             <div class="navBar">

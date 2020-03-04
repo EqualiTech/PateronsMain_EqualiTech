@@ -19,6 +19,15 @@ async function getting(main, docMe){
     });
 
 }
+
+var returnedDocArr = [];
+function gettingSingleEntryBasedOnUID(path){
+    db.doc(path).get().then(async (snap)=>{
+        console.log(snap.data());
+        returnedDocArr.push(snap.data());
+    })
+}
+
 //=============================================
 //where function stuff
 var whereIds=[];

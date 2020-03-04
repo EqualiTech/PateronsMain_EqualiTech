@@ -87,3 +87,11 @@
 
 
 2020, 02, 25 - 22:03:21 --- Number of Returned Paterons - working!
+
+2020, 02, 25 - 22:48:43 --- NavBar color - working. NEXT? - JS functioning
+
+2020, 02, 26 - 14:39:43 --- ===============================================
+
+2020, 03, 03 - 16:04:56 --- hide/show flow ? ->show('todayPageHeading')
+
+2020, 03, 03 - 16:05:20 --- And show 'emailSearchPage'

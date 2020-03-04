@@ -111,13 +111,24 @@
     width: 100%;
 }
 .padMeLeft{
-    padding-left: 4em;
+    /* padding-left: 4em; */
+    text-align: center;
  }
 .padMeRight{
-    padding-right: 4em;
+    /* padding-right: 4em; */
+    text-align: center;
  }
 
  .borderMe{
     border: grey 1px;
  }
 
+ /* ========== */
+#emailSearchPage{
+     display: none;
+}
+
+.margMe2{
+    margin-top: 1.8em;
+
+}

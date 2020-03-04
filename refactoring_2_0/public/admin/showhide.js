@@ -2,7 +2,7 @@
 // then...
 // to show weekPage & then, todayPage
 
-var hideArray = ['login', 'weekPage', 'todayPage'];
+var hideArray = ['todayPageHeading', 'emailSearchPage'];
 function hide() {
     for (var i = 0; i < hideArray.length; i++) {
         document.getElementById(hideArray[i]).style.display = 'none';
