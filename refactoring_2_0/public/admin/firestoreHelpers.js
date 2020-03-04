@@ -31,7 +31,7 @@ function gettingSingleEntryBasedOnUID(path){
 //=============================================
 //where function stuff
 var whereIds=[];
-async function whereMe(root, first, second){
+async function whereMe(root, first, second, callback){
     tmp = db.collection(root);
 
     tmp2 = tmp.where(first, '==', second)
@@ -39,6 +39,7 @@ async function whereMe(root, first, second){
     tmp2.get().then(async (snap)=>snap.forEach(async (doc)=>{
         console.log(doc)
         await whereIds.push(doc.id);
+        callback();                 //critical to have this callback() HERE(!)
     }));
 
 

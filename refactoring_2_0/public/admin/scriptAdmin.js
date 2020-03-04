@@ -143,7 +143,11 @@ function removeAll(elem){
 
 //==================================================
 
-function whereIsMatchingEmail(email){
-    whereMe('paterons3', "email", email);
-    
+async function whereIsMatchingEmail(email, rootPath){
+    await   whereMe('paterons3', "email", email, ()=>{
+        console.log('whereIds', whereIds);
+        
+        gettingSingleEntryBasedOnUID(rootPath + '/'  + whereIds[0]);
+    });
+
 }

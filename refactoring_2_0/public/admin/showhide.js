@@ -11,5 +11,16 @@ function hide() {
 
 function show(pageId) {
     document.getElementById(pageId).style.display = 'block';
+    if(pageId=="emailSearchPage"){
+        document.getElementById('searchBtn').addEventListener('click', ()=>{
+            var elem = document.getElementById('emailSearch').value;
+            
+            console.log('elem', elem);
+
+            whereIsMatchingEmail(elem, "paterons");
+        });
+
+    }
+
     
 }
