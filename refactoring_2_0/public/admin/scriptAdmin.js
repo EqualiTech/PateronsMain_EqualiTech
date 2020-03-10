@@ -146,13 +146,14 @@ function removeAll(elem){
 async function whereIsMatchingEmail(email, rootPath){
     //function to pull 1 email
     //populate all occurances for said email
+    whereIds=[];    
     await whereMe('paterons3', "email", email, ()=>{
         console.log('whereIds', whereIds);
         
-        var firstParam = rootPath+'/';
+        // var firstParam = rootPath+'/';   
 
         for(var i=0; i<whereIds.length; i++){
-            gettingSingleEntryBasedOnUID(firstParam, whereIds[i]);        //returnedDoc (whole DOCs based on UID)
+            gettingSingleEntryBasedOnUID(rootPath, whereIds[i]);        //returnedDoc (whole DOCs based on UID)
         }
     });
 

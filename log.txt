@@ -109,3 +109,7 @@
 2020, 03, 10 - 13:10:10 --- whereIsMatchingEmail(email, rootPath) - current function. It pulls all DOCs with same email. NEXT? - HTMLize it
 
 2020, 03, 10 - 13:15:25 --- whereIsMatchingEmail(email, root) -> gettingSingleEntryBasedOnUID(root, UID (<wholeDoc>)) -> returnedDoc -> secsToDate(returnedDoc[].dateMe.seconds)
+
+2020, 03, 10 - 13:54:19 --- pulling Data based on email - getting closer
+
+2020, 03, 10 - 13:55:00 --- whereIsMatchingEmail(<email>, <rootPath>) - pulls all data matching sent in email param

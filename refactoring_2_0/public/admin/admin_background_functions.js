@@ -11,6 +11,8 @@ async function getting(main, docMe){
 //where function stuff
 var whereIds=[];
 async function whereMe(root, first, second){
+
+    whereIds=[];
     tmp = db.collection(root);
 
     tmp2 = tmp.where(first, '==', second)

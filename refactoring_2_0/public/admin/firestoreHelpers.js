@@ -23,7 +23,9 @@ async function getting(main, docMe){
 var returnedDocArr = [];
 function gettingSingleEntryBasedOnUID(root, path){
     returnedDocArr = [];
-    db.doc(root + path).get().then(async (snap)=>{
+    var pathMe = root+"/"+path;
+    console.log('?', pathMe);
+    db.doc(pathMe).get().then(async (snap)=>{
         console.log(snap.data());
         returnedDocArr.push(snap.data());
     })
@@ -43,7 +45,7 @@ async function whereMe(root, first, second, callback){
     tmp2 = tmp.where(first, '==', second)
 
     tmp2.get().then(async (snap)=>snap.forEach(async (doc)=>{
-        console.log(doc)
+        console.log(doc);
         await whereIds.push(doc.id);
         callback();                 //critical to have this callback() HERE(!)
     }));
