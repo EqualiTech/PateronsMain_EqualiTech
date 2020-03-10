@@ -21,8 +21,9 @@ async function getting(main, docMe){
 }
 
 var returnedDocArr = [];
-function gettingSingleEntryBasedOnUID(path){
-    db.doc(path).get().then(async (snap)=>{
+function gettingSingleEntryBasedOnUID(root, path){
+    returnedDocArr = [];
+    db.doc(root + path).get().then(async (snap)=>{
         console.log(snap.data());
         returnedDocArr.push(snap.data());
     })
@@ -30,8 +31,13 @@ function gettingSingleEntryBasedOnUID(path){
 
 //=============================================
 //where function stuff
+//finding compared parameters, based on root and
+//uses callback 
 var whereIds=[];
 async function whereMe(root, first, second, callback){
+    
+    whereIds=[];
+
     tmp = db.collection(root);
 
     tmp2 = tmp.where(first, '==', second)

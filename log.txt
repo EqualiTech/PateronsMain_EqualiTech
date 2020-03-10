@@ -103,3 +103,9 @@
 2020, 03, 03 - 16:24:47 --- Pull a single instance of 'queried' email - working
 
 2020, 03, 03 - 16:36:49 --- Searching in background ? - working? kinda
+
+2020, 03, 10 - 12:59:06 --- ===============================================
+
+2020, 03, 10 - 13:10:10 --- whereIsMatchingEmail(email, rootPath) - current function. It pulls all DOCs with same email. NEXT? - HTMLize it
+
+2020, 03, 10 - 13:15:25 --- whereIsMatchingEmail(email, root) -> gettingSingleEntryBasedOnUID(root, UID (<wholeDoc>)) -> returnedDoc -> secsToDate(returnedDoc[].dateMe.seconds)

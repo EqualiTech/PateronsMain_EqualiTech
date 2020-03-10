@@ -58,8 +58,8 @@ function withinDates(path, inputMe, callback){
 
 //=====================================================
 var HTMLStringForAdmin = "";
-var tmpArr = [];
-function makeHTML(i){
+// var tmpArr = [];
+function makeHTML(i){//for TODAY page
     //basic foundation for HTMLing the Admin page
     //pushes all HTML to an Array[], then joins them and outputs to innerHTML
 
@@ -144,10 +144,32 @@ function removeAll(elem){
 //==================================================
 
 async function whereIsMatchingEmail(email, rootPath){
-    await   whereMe('paterons3', "email", email, ()=>{
+    //function to pull 1 email
+    //populate all occurances for said email
+    await whereMe('paterons3', "email", email, ()=>{
         console.log('whereIds', whereIds);
         
-        gettingSingleEntryBasedOnUID(rootPath + '/'  + whereIds[0]);
+        var firstParam = rootPath+'/';
+
+        for(var i=0; i<whereIds.length; i++){
+            gettingSingleEntryBasedOnUID(firstParam, whereIds[i]);        //returnedDoc (whole DOCs based on UID)
+        }
     });
 
 }
+
+function HTMLfromOneEmail(){
+    //function to populate 1 email search
+
+    var tmpArr = [];
+    tmpArr.push('<div class="pure-g">')
+
+    tmpArr.push('<div class="pure-u-1-1 margeTop>');
+    tmpArr.push()
+
+    document.getElementById('addAttendance').innerHTML = tmpArr.join("");
+
+
+}
+
+//=====================================================
