@@ -9,21 +9,24 @@ async function getting(main, docMe){
 }
 
 //where function stuff
-var whereIds=[];
-async function whereMe(root, first, second){
+// For WHATEVER reason, this func was a duplicate!
+//huh....   
 
-    whereIds=[];
-    tmp = db.collection(root);
+// var whereIds=[];
+// async function whereMe(root, first, second){
 
-    tmp2 = tmp.where(first, '==', second)
+//     whereIds=[];
+//     tmp = db.collection(root);
 
-    tmp2.get().then(async (snap)=>snap.forEach(async (doc)=>{
-        console.log(doc)
-        await whereIds.push(doc.id);
-    }));
+//     tmp2 = tmp.where(first, '==', second)
+
+//     tmp2.get().then(async (snap)=>snap.forEach(async (doc)=>{
+//         console.log(doc)
+//         await whereIds.push(doc.id);
+//     }));
 
 
-}
+// }
 
 var convertedDate;
 function getDateFromSecs(dateStuff){

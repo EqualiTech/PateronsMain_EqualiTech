@@ -24,7 +24,7 @@ var returnedDocArr = [];
 function gettingSingleEntryBasedOnUID(root, path){
     returnedDocArr = [];
     var pathMe = root+"/"+path;
-    console.log('?', pathMe);
+    console.log('?', pathMe);   
     db.doc(pathMe).get().then(async (snap)=>{
         console.log(snap.data());
         returnedDocArr.push(snap.data());

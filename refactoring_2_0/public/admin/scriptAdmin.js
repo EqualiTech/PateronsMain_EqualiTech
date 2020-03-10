@@ -147,14 +147,20 @@ async function whereIsMatchingEmail(email, rootPath){
     //function to pull 1 email
     //populate all occurances for said email
     whereIds=[];    
-    await whereMe('paterons3', "email", email, ()=>{
+
+    await whereMe('paterons3', "email", email, async ()=>{
         console.log('whereIds', whereIds);
         
         // var firstParam = rootPath+'/';   
 
-        for(var i=0; i<whereIds.length; i++){
-            gettingSingleEntryBasedOnUID(rootPath, whereIds[i]);        //returnedDoc (whole DOCs based on UID)
-        }
+    }).then(async ()=>{
+        wait(800).then(()=>{
+            for(var i=0; i<whereIds.length; i++){
+                console.log('i', i);
+                gettingSingleEntryBasedOnUID(rootPath, whereIds[i]);        //returnedDoc (whole DOCs based on UID)
+            }
+
+        });
     });
 
 }
