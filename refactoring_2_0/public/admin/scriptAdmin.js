@@ -1,11 +1,12 @@
 //HTML functions for ADMIN
 // function makeHTML(){
     
-// }
-
+    // }
+    
 
 window.onload = ()=>{
     makeCalendar();
+    var indexRange = 0;
 
   
 
@@ -143,14 +144,17 @@ function removeAll(elem){
 
 //==================================================
 
-async function whereIsMatchingEmail(email, rootPath){
+async function whereIsMatchingEmail(rootPath, email, callback){
     //function to pull 1 email
     //populate all occurances for said email
     whereIds=[];    
+    returnedDocArr=[];
 
     await whereMe('paterons3', "email", email, async ()=>{
         console.log('whereIds', whereIds);
         
+        indexRange = whereIds.length;
+        console.log('indexRange', indexRange);
         // var firstParam = rootPath+'/';   
 
     }).then(async ()=>{
@@ -159,22 +163,50 @@ async function whereIsMatchingEmail(email, rootPath){
                 console.log('i', i);
                 gettingSingleEntryBasedOnUID(rootPath, whereIds[i]);        //returnedDoc (whole DOCs based on UID)
             }
-
+            
         });
     });
-
+    // }).then(()=>{
+    // });
+    callback();
+    
 }
 
-function HTMLfromOneEmail(){
-    //function to populate 1 email search
-
+var str2 = "";
+var tmpArr=[];
+function HTMLfromOneEmail(passed){
+    //function to populate 1 email search (for email Page)
+    // using returnedDoc[]
+    
+    
     var tmpArr = [];
+    str2="";
     tmpArr.push('<div class="pure-g">')
 
-    tmpArr.push('<div class="pure-u-1-1 margeTop>');
-    tmpArr.push()
+    for(var j=0; j<passed; j++){
+        try{
+            tmpArr.push('<div class="pure-u-1-1 margeTop">');
+            var secs = secsToDate(returnedDocArr[j].dateMe.seconds);
+            tmpArr.push(secs);
+            tmpArr.push('</div>');
+            console.log('tmpArr', tmpArr);
+            // console.log('HTMLarr', tmpArr);        
 
-    document.getElementById('addAttendance').innerHTML = tmpArr.join("");
+        }catch(error){
+            console.log('error', error);
+        }
+    }
+    
+    tmpArr.push('</div>');
+    str2 = tmpArr.join("");
+    // str2 = str2.toString();
+
+
+    console.log('str2', str2);
+
+    document.getElementById('addAttendance').innerHTML = str2;
+
+
 
 
 }

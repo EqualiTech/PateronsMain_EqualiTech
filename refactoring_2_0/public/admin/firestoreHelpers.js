@@ -28,7 +28,7 @@ function gettingSingleEntryBasedOnUID(root, path){
     db.doc(pathMe).get().then(async (snap)=>{
         console.log(snap.data());
         returnedDocArr.push(snap.data());
-    })
+    });
 }
 
 //=============================================
@@ -46,7 +46,7 @@ async function whereMe(root, first, second, callback){
 
     tmp2.get().then(async (snap)=>snap.forEach(async (doc)=>{
         console.log(doc);
-        await whereIds.push(doc.id);
+        whereIds.push(doc.id);
         callback();                 //critical to have this callback() HERE(!)
     }));
 

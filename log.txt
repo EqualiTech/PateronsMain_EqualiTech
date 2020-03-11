@@ -113,3 +113,7 @@
 2020, 03, 10 - 13:54:19 --- pulling Data based on email - getting closer
 
 2020, 03, 10 - 13:55:00 --- whereIsMatchingEmail(<email>, <rootPath>) - pulls all data matching sent in email param
+
+2020, 03, 10 - 16:01:18 --- Pulling a single email - working. NEXT? - sorting date and HTMLize
+
+2020, 03, 10 - 16:01:55 --- HTML? - working off 'addAttendance' ID (html)
