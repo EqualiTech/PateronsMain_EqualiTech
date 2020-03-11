@@ -178,6 +178,7 @@ function HTMLfromOneEmail(passed){
     //function to populate 1 email search (for email Page)
     // using returnedDoc[]
     
+    console.log('passed', passed);
     
     var tmpArr = [];
     str2="";

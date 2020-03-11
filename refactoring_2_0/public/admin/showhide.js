@@ -17,6 +17,9 @@ function show(pageId) {
             
             console.log('elem', elem);
 
+            str2=""; indexRange=0;
+
+
             whereIsMatchingEmail('paterons3', elem, ()=>{
                 wait(1800).then(async ()=>{
                     if(HTMLfromOneEmail(indexRange)===undefined){
