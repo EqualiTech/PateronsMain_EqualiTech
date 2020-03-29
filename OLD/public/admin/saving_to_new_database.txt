@@ -1,5 +1,0 @@
-addDataToFirestoreForCompletelyNew('paterons', {name: , date: new Date(arrayOfVal[0].date)});
-
-for(var i=3; i<=10; i++){
-    addDataToFirestoreForCompletelyNew('paterons', {name: arrayOfVal[i].name , date: new Date(arrayOfVal[i].date)});
-}
